@@ -35,8 +35,10 @@ export function Countdown(props: CountdownProps) {
   }
 
   return (
-    <TextAnimated className="text-3xl dark:text-white">
-      {count.toString()}
-    </TextAnimated>
+    <div className="flex h-full w-full items-center justify-center">
+      <TextAnimated className="text-3xl dark:text-white">
+        {count.toString()}
+      </TextAnimated>
+    </div>
   );
 }

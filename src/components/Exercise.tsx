@@ -95,7 +95,10 @@ export function Exercise({
   }, []);
 
   return (
-    <animated.div style={containerStyle}>
+    <animated.div
+      className="flex h-full w-full flex-col items-center justify-center"
+      style={containerStyle}
+    >
       <div className="relative">
         <animated.div
           className="absolute flex h-full w-full items-center justify-center text-3xl font-bold"

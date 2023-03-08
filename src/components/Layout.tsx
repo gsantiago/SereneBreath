@@ -18,7 +18,9 @@ export function Layout({ showHeaderAndFooter, children }) {
             setShowAbout(false);
           }}
         />
-        {children}
+        <div className="flex h-full w-full items-end justify-center md:items-center">
+          {children}
+        </div>
         <Footer
           isVisible={showHeaderAndFooter}
           showAbout={showAbout}
