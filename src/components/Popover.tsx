@@ -18,7 +18,7 @@ export function Popover({
 
   return (
     <div
-      className={`absolute  w-full rounded-md  bg-white py-2 shadow-md dark:bg-slate-800 sm:w-80 ${visibilityClass} ${positionClass}`}
+      className={`absolute  w-full rounded-md  bg-white py-2 shadow-md dark:bg-slate-800 sm:w-80 ${visibilityClass} ${positionClass} z-10`}
       {...props}
     />
   );
