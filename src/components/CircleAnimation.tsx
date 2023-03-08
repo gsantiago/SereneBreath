@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { animated, useSpring } from "@react-spring/web";
 import { AnimationProps } from "../config/types";
 
 const WIDTH = 200;
@@ -16,27 +17,34 @@ export function CircleAnimation({ currentStep, pattern }: AnimationProps) {
   const minRadius = RADIUS - 80;
   const maxRadius = RADIUS - 10;
 
-  const [radius, setRadius] = useState(minRadius);
+  const [step, setStep] = useState("");
 
-  const styles = [maxRadius, maxRadius, minRadius, minRadius];
+  const props = useSpring({
+    from: { r: minRadius },
+    to: {
+      r: step === "inhale" ? maxRadius : minRadius,
+    },
+    config: {
+      duration: pattern[currentStep] * 1000,
+    },
+  });
 
   useEffect(() => {
-    setRadius(styles[currentStep]);
+    if (currentStep === 0 || currentStep === 1) {
+      setStep("inhale");
+    } else {
+      setStep("exhale");
+    }
   }, [currentStep]);
 
   return (
     <svg width={WIDTH} height={HEIGHT}>
       <circle cx={CENTER.x} cy={CENTER.y} r={RADIUS} className="fill-sky-400" />
-      <circle
+      <animated.circle
         cx={CENTER.x}
         cy={CENTER.y}
-        r={RADIUS / 2}
-        style={{
-          transition: `r ${pattern[currentStep]}s linear`,
-          // @ts-ignore
-          r: radius,
-        }}
         className="fill-sky-100"
+        r={props.r}
       />
     </svg>
   );
