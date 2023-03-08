@@ -25,3 +25,5 @@ dist-ssr
 
 # Need to ask permission before commit these audios
 *.mp3
+
+src/stories
