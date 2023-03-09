@@ -39,11 +39,16 @@ export function CircleAnimation({ currentStep, pattern }: AnimationProps) {
 
   return (
     <svg width={WIDTH} height={HEIGHT}>
-      <circle cx={CENTER.x} cy={CENTER.y} r={RADIUS} className="fill-sky-400" />
+      <circle
+        cx={CENTER.x}
+        cy={CENTER.y}
+        r={RADIUS}
+        className="fill-blue-600"
+      />
       <animated.circle
         cx={CENTER.x}
         cy={CENTER.y}
-        className="fill-sky-100"
+        className="fill-sky-100 dark:fill-slate-900"
         r={props.r}
       />
     </svg>

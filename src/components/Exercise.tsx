@@ -101,7 +101,7 @@ export function Exercise({
     >
       <div className="relative">
         <animated.div
-          className="absolute flex h-full w-full items-center justify-center text-3xl font-bold"
+          className="absolute flex h-full w-full items-center justify-center text-3xl font-bold dark:text-white"
           style={completeStyle}
         >
           <p>Complete</p>
@@ -115,7 +115,8 @@ export function Exercise({
         </animated.div>
       </div>
       <div className="mt-10 flex justify-center">
-        <ButtonRound
+        <button
+          className="hover:opacity-50 dark:text-white"
           title="Close"
           onClick={() =>
             containerSpring.start({
@@ -132,7 +133,7 @@ export function Exercise({
           }
         >
           {closeIcon}
-        </ButtonRound>
+        </button>
       </div>
     </animated.div>
   );
@@ -145,12 +146,12 @@ const closeIcon = (
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className="h-6 w-6"
+    className="h-12 w-12"
   >
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
-      d="M6 18L18 6M6 6l12 12"
+      d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
     />
   </svg>
 );

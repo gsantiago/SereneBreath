@@ -10,7 +10,7 @@ export interface TimeProps {
  */
 export const Time = ({ seconds }: TimeProps) => {
   return (
-    <p className="m-0 text-center text-4xl font-semibold text-teal-500">
+    <p className="m-0 text-center text-4xl font-semibold dark:text-white">
       {formatSeconds(seconds)}
     </p>
   );
