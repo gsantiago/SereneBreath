@@ -18,6 +18,7 @@ function App() {
   const [technique] = useStorage("technique");
   const [time] = useStorage("time");
   const [guide] = useStorage("guide");
+  const [vibration] = useStorage("vibration");
 
   const [startStyle, startSpring] = useSpring(() => ({
     from: {
@@ -36,7 +37,7 @@ function App() {
             <Exercise
               guide={guide}
               seconds={time * 60}
-              vibrateOnStepChange={true}
+              vibrateOnStepChange={vibration}
               pattern={techniques.find((p) => p.name === technique).pattern}
               onClose={() => {
                 setShowHeaderAndFooter(true);

@@ -15,6 +15,8 @@ export interface SettingsProps {
   isVisible: boolean;
 }
 
+const canVibrate = "vibrate" in navigator;
+
 export function Settings({ isVisible }: SettingsProps) {
   const [technique, setTechnique] = useStorage("technique");
   const [time, setTime] = useStorage("time");
@@ -42,13 +44,15 @@ export function Settings({ isVisible }: SettingsProps) {
       <Field id="time" label="Time" description="Exercise time in minutes">
         <Stepper min={1} value={time} onChange={setTime} />
       </Field>
-      <Field
-        id="vibration"
-        label="Vibration"
-        description="Vibrate on each step"
-      >
-        <Switch id="vibration" value={vibration} onChange={setVibration} />
-      </Field>
+      {canVibrate && (
+        <Field
+          id="vibration"
+          label="Vibration"
+          description="Vibrate on each step"
+        >
+          <Switch id="vibration" value={vibration} onChange={setVibration} />
+        </Field>
+      )}
       <Field
         id="guide"
         label="Guide Breath"
