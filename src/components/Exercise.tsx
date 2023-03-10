@@ -5,7 +5,6 @@ import { exerciseManager } from "../modules/ExerciseManager";
 import { AudioManager } from "../modules/AudioManager";
 
 import { Time } from "./Time";
-import { ButtonRound } from "./ButtonRound";
 import { StepIndicator } from "./StepIndicator";
 import { CircleAnimation } from "./CircleAnimation";
 
@@ -114,9 +113,9 @@ export function Exercise({
           <StepIndicator step={data.step} />
         </animated.div>
       </div>
-      <div className="mt-10 flex justify-center">
+      <div className="mt-20 flex justify-center">
         <button
-          className="hover:opacity-50 dark:text-white"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-600 hover:opacity-50 dark:border-white dark:text-white"
           title="Close"
           onClick={() =>
             containerSpring.start({
@@ -146,12 +145,12 @@ const closeIcon = (
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className="h-12 w-12"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
-      d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+      d="M6 18L18 6M6 6l12 12"
     />
   </svg>
 );
