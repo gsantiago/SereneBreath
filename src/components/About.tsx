@@ -20,6 +20,17 @@ export function About({ isVisible }) {
           </a>{" "}
           for more info.
         </p>
+        <p className="mt-2 text-xs">
+          English and bell audio files are from the great{" "}
+          <a
+            className="text-blue-600 underline"
+            href="https://breathly.app/"
+            target="_blank"
+          >
+            Breatly
+          </a>{" "}
+          app, which also inspired this app.
+        </p>
         <div className="mt-5 text-center">
           <small className="text-xs text-gray-400">v0.0.1</small>
         </div>
