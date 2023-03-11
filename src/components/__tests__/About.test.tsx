@@ -1,7 +1,7 @@
 import React from "react";
 import { test, expect } from "vitest";
 
-import { render, axe } from "../../../test-utils";
+import { render, axe } from "@/test-utils";
 
 import { About } from "../About";
 
