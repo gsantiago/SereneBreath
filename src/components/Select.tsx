@@ -12,7 +12,7 @@ export function Select({ value, onChange, options, ...props }: SelectProps) {
     <select
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="w-full cursor-pointer rounded-md border-gray-300 text-sm"
+      className="w-full cursor-pointer rounded-md border-gray-300 text-sm dark:text-gray-700"
       {...props}
     >
       {options.map((option) => (
