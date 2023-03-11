@@ -22,7 +22,6 @@ export function Toggle(props: ToggleProps) {
           }`}
         >
           <input
-            id={props.id}
             type="radio"
             value={option.value}
             name={props.name}
