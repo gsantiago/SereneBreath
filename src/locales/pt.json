@@ -1,4 +1,43 @@
 {
   "language": "Português",
-  "start": "Começar"
+  "start": "Iniciar",
+  "complete": "Completo",
+  "steps": {
+    "inhale": "Inspire",
+    "hold": "Segure",
+    "exhale": "Solte"
+  },
+  "about": {
+    "text1": "Pequeno app para ajudá-lo a treinar sua respiração e administrar seu estresse.",
+    "text2": "Este projeto é código aberto e está disponível para novas contribuições. Confira seu repositório para mais informações:",
+    "text3": "Sons de sino e guia em inglês são do app Breathly, que também inspirou este app."
+  },
+  "settings": {
+    "title": "Ajustes",
+    "technique": "Técnica",
+    "time": {
+      "title": "Tempo",
+      "description": "Tempo do exercício em minutos"
+    },
+    "vibration": {
+      "title": "Vibração",
+      "description": "Vibrar em cada passo"
+    },
+    "guide": {
+      "title": "Guia de respiração",
+      "disabled": "Habilitar guia de respiração",
+      "enabled": "Selecione seu guia favorito",
+      "options": {
+        "female": "Voz feminina",
+        "male": "Voz masculino",
+        "bell": "Sino"
+      }
+    },
+    "theme": {
+      "title": "Tema",
+      "system": "Sistema",
+      "light": "Claro",
+      "dark": "Escuro"
+    }
+  }
 }
