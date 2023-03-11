@@ -39,5 +39,17 @@
       "light": "Light",
       "dark": "Dark"
     }
+  },
+  "audio": {
+    "female": {
+      "inhale": "/en/female_inhale.mp3",
+      "hold": "/en/female_hold.mp3",
+      "exhale": "/en/female_exhale.mp3"
+    },
+    "male": {
+      "inhale": "/en/male_inhale.mp3",
+      "hold": "/en/male_hold.mp3",
+      "exhale": "/en/male_exhale.mp3"
+    }
   }
 }

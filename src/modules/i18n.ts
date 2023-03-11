@@ -11,7 +11,7 @@ type NestedKeyOf<ObjectType extends object> = {
 
 type TranslationKey = NestedKeyOf<typeof translations.en>;
 
-export function translate(key: TranslationKey) {
+export function translate(key: TranslationKey): string {
   const locale = getItem("locale");
   const value = objectPath.get(translations[locale], key);
 
