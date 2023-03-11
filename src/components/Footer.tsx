@@ -1,6 +1,7 @@
 import React from "react";
 import { About } from "./About";
 import { ButtonIcon } from "./ButtonIcon";
+import { LanguageSelect } from "./LanguageSelect";
 
 export interface FooterProps {
   isVisible: boolean;
@@ -11,10 +12,13 @@ export interface FooterProps {
 export function Footer({ isVisible, showAbout, onToggleAbout }: FooterProps) {
   return (
     <footer
-      className={`relative flex w-full justify-end text-xs transition-opacity dark:text-white ${
+      className={`relative flex w-full justify-between text-xs transition-opacity dark:text-white ${
         isVisible ? "opacity-1" : "opacity-0"
       }`}
     >
+      <div className="w-40">
+        <LanguageSelect />
+      </div>
       <ButtonIcon
         title="About"
         isActive={showAbout}

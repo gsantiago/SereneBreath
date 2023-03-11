@@ -1,12 +1,16 @@
 import React from "react";
 import { TextAnimated } from "./TextAnimated";
 
-const STEPS = ["Inhale", "Hold", "Exhale", "Hold"];
+import { useTranslation } from "../hooks/useTranslation";
+
+const STEPS = ["inhale", "hold", "exhale", "hold"] as const;
 
 export function StepIndicator(props: { step: number }) {
+  const { t } = useTranslation();
+
   return (
     <TextAnimated className="text-center dark:text-white">
-      {STEPS[props.step]}
+      {t(`steps.${STEPS[props.step]}`)}
     </TextAnimated>
   );
 }

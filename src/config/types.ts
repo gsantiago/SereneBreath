@@ -1,9 +1,12 @@
+import { translations } from "../config/translations";
+
 export type Settings = {
   technique: string;
   time: number;
   vibration: boolean;
   guide: "female" | "male" | "bell" | "disabled";
   theme: "system" | "light" | "dark";
+  language: keyof typeof translations;
 };
 
 // inhale, hold, exhale, hold

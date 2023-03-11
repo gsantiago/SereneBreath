@@ -9,6 +9,8 @@ import { Toggle } from "./Toggle";
 import { Popover } from "./Popover";
 import { Select } from "./Select";
 
+import { useTranslation } from "../hooks/useTranslation";
+
 import { techniques } from "../config/techniques";
 
 export interface SettingsProps {
@@ -18,6 +20,8 @@ export interface SettingsProps {
 const canVibrate = "vibrate" in navigator;
 
 export function Settings({ isVisible }: SettingsProps) {
+  const { t } = useTranslation();
+
   const [technique, setTechnique] = useStorage("technique");
   const [time, setTime] = useStorage("time");
   const [vibration, setVibration] = useStorage("vibration");
@@ -28,7 +32,7 @@ export function Settings({ isVisible }: SettingsProps) {
     <Popover isVisible={isVisible}>
       <Field
         id="technique"
-        label="Technique"
+        label={t("settings.technique")}
         bottom={
           <Select
             id="technique"
@@ -41,25 +45,29 @@ export function Settings({ isVisible }: SettingsProps) {
           />
         }
       />
-      <Field id="time" label="Time" description="Exercise time in minutes">
+      <Field
+        id="time"
+        label={t("settings.time.title")}
+        description={t("settings.time.description")}
+      >
         <Stepper min={1} value={time} onChange={setTime} />
       </Field>
       {canVibrate && (
         <Field
           id="vibration"
-          label="Vibration"
-          description="Vibrate on each step"
+          label={t("settings.vibration.title")}
+          description={t("settings.vibration.description")}
         >
           <Switch id="vibration" value={vibration} onChange={setVibration} />
         </Field>
       )}
       <Field
         id="guide"
-        label="Guide Breath"
+        label={t("settings.guide.title")}
         description={
           guide === "disabled"
-            ? "Enable guide breath"
-            : "Select your favorite guide"
+            ? t("settings.guide.disabled")
+            : t("settings.guide.enabled")
         }
         children={
           <Switch
@@ -75,9 +83,9 @@ export function Settings({ isVisible }: SettingsProps) {
               value={guide}
               onChange={setGuide}
               options={[
-                { label: "Female voice", value: "female" },
-                { label: "Male voice", value: "male" },
-                { label: "Bell", value: "bell" },
+                { label: t("settings.guide.options.female"), value: "female" },
+                { label: t("settings.guide.options.male"), value: "male" },
+                { label: t("settings.guide.options.bell"), value: "bell" },
               ]}
             />
           )
@@ -85,7 +93,7 @@ export function Settings({ isVisible }: SettingsProps) {
       />
       <Field
         id="theme"
-        label="Theme"
+        label={t("settings.theme.title")}
         bottom={
           <Toggle
             id="theme"
@@ -94,15 +102,15 @@ export function Settings({ isVisible }: SettingsProps) {
             onChange={setTheme}
             options={[
               {
-                label: "System",
+                label: t("settings.theme.system"),
                 value: "system",
               },
               {
-                label: "Dark",
+                label: t("settings.theme.dark"),
                 value: "dark",
               },
               {
-                label: "Light",
+                label: t("settings.theme.light"),
                 value: "light",
               },
             ]}

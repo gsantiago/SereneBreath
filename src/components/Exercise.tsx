@@ -9,6 +9,7 @@ import { StepIndicator } from "./StepIndicator";
 import { CircleAnimation } from "./CircleAnimation";
 
 import { Pattern, Settings } from "../config/types";
+import { useTranslation } from "../hooks/useTranslation";
 
 export interface ExerciseProps {
   guide: Settings["guide"];
@@ -25,6 +26,8 @@ export function Exercise({
   seconds,
   onClose,
 }: ExerciseProps) {
+  const { t } = useTranslation();
+
   const [data, setData] = useState({ seconds, step: 0 });
 
   const audioRef = useRef(new AudioManager(guide));
@@ -103,7 +106,7 @@ export function Exercise({
           className="absolute flex h-full w-full items-center justify-center text-3xl font-bold dark:text-white"
           style={completeStyle}
         >
-          <p>Complete</p>
+          <p>{t("complete")}</p>
         </animated.div>
         <animated.div style={contentStyle}>
           <Time seconds={data.seconds} />

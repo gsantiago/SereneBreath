@@ -1,7 +1,10 @@
 import React from "react";
 import { animated, useSpring, config } from "@react-spring/web";
+
 import { Settings } from "./Settings";
 import { ButtonIcon } from "./ButtonIcon";
+
+import { useTranslation } from "../hooks/useTranslation";
 
 export interface HeaderProps {
   isVisible: boolean;
@@ -14,6 +17,8 @@ export const Header = ({
   showSettings,
   onToggleSettings,
 }: HeaderProps) => {
+  const { t } = useTranslation();
+
   const headerStyles = useSpring({
     from: { y: 0, opacity: 0 },
     to: {
@@ -32,7 +37,7 @@ export const Header = ({
       <div className="z-10 flex">
         <ButtonIcon
           isActive={showSettings}
-          title="Settings"
+          title={t("settings.title")}
           onClick={onToggleSettings}
         >
           {gearIcon}
