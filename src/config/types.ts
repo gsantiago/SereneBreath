@@ -6,7 +6,7 @@ export type Settings = {
   vibration: boolean;
   guide: "female" | "male" | "bell" | "disabled";
   theme: "system" | "light" | "dark";
-  language: keyof typeof translations;
+  locale: keyof typeof translations;
 };
 
 // inhale, hold, exhale, hold

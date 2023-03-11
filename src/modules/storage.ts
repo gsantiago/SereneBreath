@@ -16,7 +16,7 @@ const defaultValues: Settings = {
   vibration: false,
   guide: "female",
   theme: "system",
-  language: defaultLocale,
+  locale: defaultLocale,
 };
 
 export type Key = keyof Settings;

@@ -9,6 +9,6 @@ const options = Object.keys(translations).map((key) => ({
 }));
 
 export function LanguageSelect() {
-  const [language, setLanguage] = useStorage("language");
-  return <Select value={language} onChange={setLanguage} options={options} />;
+  const [locale, setLocale] = useStorage("locale");
+  return <Select value={locale} onChange={setLocale} options={options} />;
 }
