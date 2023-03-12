@@ -19,7 +19,7 @@ export function RadioGroup(props: RadioGroup) {
           label={option.label}
           value={option.value}
           checked={option.value === props.value}
-          onChange={(e) => props.onChange(e.target.value)}
+          onChange={(e) => props.onChange((e.target as HTMLInputElement).value)}
         />
       ))}
     </>

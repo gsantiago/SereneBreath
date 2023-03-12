@@ -1,6 +1,12 @@
 import React from "react";
 
-export function Switch({ id, value, onChange }) {
+export interface SwitchProps {
+  id: string;
+  value: boolean;
+  onChange: (newValue: boolean) => string;
+}
+
+export function Switch({ id, value, onChange }: SwitchProps) {
   return (
     <div className="relative inline-flex cursor-pointer items-center">
       <input

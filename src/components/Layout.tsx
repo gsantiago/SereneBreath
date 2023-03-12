@@ -3,7 +3,12 @@ import React, { useState } from "react";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
-export function Layout({ showHeaderAndFooter, children }) {
+export interface LayoutProps {
+  showHeaderAndFooter: boolean;
+  children: React.ReactNode;
+}
+
+export function Layout({ showHeaderAndFooter, children }: LayoutProps) {
   const [showSettings, setShowSettings] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
 

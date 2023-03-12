@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Link(props) {
+export function Link(props: React.HTMLProps<HTMLAnchorElement>) {
   return (
     <a
       target="_blank"

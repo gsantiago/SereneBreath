@@ -3,7 +3,7 @@ import * as storage from "../modules/storage";
 
 export function useThemeSupport() {
   useEffect(() => {
-    const checkTheme = (theme) => {
+    const checkTheme = (theme: string): void => {
       if (theme === "system") {
         return checkTheme(
           window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -17,6 +17,6 @@ export function useThemeSupport() {
 
     checkTheme(storage.getItem("theme"));
 
-    return storage.subscribe("theme", checkTheme);
+    return storage.subscribe("theme", (value) => checkTheme(value as string));
   }, []);
 }

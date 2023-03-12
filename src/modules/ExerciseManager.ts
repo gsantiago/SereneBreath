@@ -12,7 +12,7 @@ type Events = {
 export function exerciseManager(seconds: number, pattern: Pattern) {
   const emitter = mitt<Events>();
 
-  let intervalId;
+  let intervalId: NodeJS.Timer;
   let step = 0;
   let patternCount = 0;
 

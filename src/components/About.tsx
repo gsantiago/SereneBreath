@@ -3,7 +3,11 @@ import { Popover } from "./Popover";
 import { Link } from "./Link";
 import { useTranslation } from "../hooks/useTranslation";
 
-export function About({ isVisible }) {
+export interface AboutProps {
+  isVisible: boolean;
+}
+
+export function About({ isVisible }: AboutProps) {
   const { t } = useTranslation();
 
   return (

@@ -40,8 +40,9 @@ export function Stepper({
   );
 }
 
-const Control = (props) => (
+const Control = (props: React.HTMLProps<HTMLButtonElement>) => (
   <button
+    // @ts-ignore
     type="button"
     className="flex h-6 w-6 items-center justify-center rounded-md bg-blue-600 text-white hover:bg-blue-700"
     {...props}

@@ -8,5 +8,5 @@ export function useStorage(key: storage.Key) {
     return storage.subscribe(key, setValue);
   }, []);
 
-  return [value, (newValue) => storage.setItem(key, newValue)];
+  return [value, (newValue: string) => storage.setItem(key, newValue)];
 }

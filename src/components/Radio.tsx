@@ -1,6 +1,10 @@
 import React from "react";
 
-export function Radio({ name, label, value, checked, onChange }) {
+export interface RadioProps extends React.HTMLProps<HTMLInputElement> {
+  label: string;
+}
+
+export function Radio({ name, label, value, checked, onChange }: RadioProps) {
   return (
     <div className="flex items-center">
       <input
