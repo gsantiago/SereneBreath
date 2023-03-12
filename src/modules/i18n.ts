@@ -1,6 +1,6 @@
 import objectPath from "object-path";
 
-import { LocaleKey, translations } from "../config/translations";
+import { translations } from "../config/translations";
 import { getItem } from "./storage";
 
 type NestedKeyOf<ObjectType extends object> = {
@@ -12,7 +12,7 @@ type NestedKeyOf<ObjectType extends object> = {
 type TranslationKey = NestedKeyOf<typeof translations.en>;
 
 export function translate(key: TranslationKey): string {
-  const locale = getItem("locale") as LocaleKey;
+  const locale = getItem("locale");
   const value = objectPath.get(translations[locale], key);
 
   if (value) {

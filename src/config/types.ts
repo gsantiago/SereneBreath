@@ -1,4 +1,4 @@
-import { translations } from "../config/translations";
+import { LocaleKey } from "../config/translations";
 
 export type Settings = {
   technique: string;
@@ -6,7 +6,7 @@ export type Settings = {
   vibration: boolean;
   guide: "female" | "male" | "bell" | "disabled";
   theme: "system" | "light" | "dark";
-  locale: keyof typeof translations;
+  locale: LocaleKey;
 };
 
 // inhale, hold, exhale, hold

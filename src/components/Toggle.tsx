@@ -1,15 +1,15 @@
 import React from "react";
 import { Option } from "../config/types";
 
-export interface ToggleProps {
+export interface ToggleProps<T> {
   id: string;
   name: string;
-  value: string;
-  onChange: (value: string) => void;
+  value: T;
+  onChange: (newValue: T) => void;
   options: Option[];
 }
 
-export function Toggle(props: ToggleProps) {
+export function Toggle<T extends string = string>(props: ToggleProps<T>) {
   return (
     <div className="flex">
       {props.options.map((option) => (
@@ -27,7 +27,7 @@ export function Toggle(props: ToggleProps) {
             name={props.name}
             checked={option.value === props.value}
             className="sr-only"
-            onChange={(e) => props.onChange(e.target.value)}
+            onChange={(e) => props.onChange(e.target.value as T)}
           />
           {option.label}
         </label>

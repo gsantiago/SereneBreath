@@ -1,7 +1,7 @@
 import React from "react";
 import { Select } from "./Select";
 import { useStorage } from "../hooks/useStorage";
-import { translations, locales } from "../config/translations";
+import { translations, locales, LocaleKey } from "../config/translations";
 
 const options = locales.map((locale) => ({
   label: translations[locale].language,
@@ -10,5 +10,8 @@ const options = locales.map((locale) => ({
 
 export function LanguageSelect() {
   const [locale, setLocale] = useStorage("locale");
-  return <Select value={locale} onChange={setLocale} options={options} />;
+
+  return (
+    <Select<LocaleKey> value={locale} onChange={setLocale} options={options} />
+  );
 }

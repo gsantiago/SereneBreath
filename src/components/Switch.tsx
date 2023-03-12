@@ -3,7 +3,7 @@ import React from "react";
 export interface SwitchProps {
   id: string;
   value: boolean;
-  onChange: (newValue: boolean) => string;
+  onChange: (newValue: boolean) => void;
 }
 
 export function Switch({ id, value, onChange }: SwitchProps) {

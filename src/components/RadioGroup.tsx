@@ -2,14 +2,14 @@ import React from "react";
 import { Radio } from "./Radio";
 import { Option } from "../config/types";
 
-export interface RadioGroup {
+export interface RadioGroup<T> {
   name: string;
   options: Option[];
-  value: string;
-  onChange: (newOption: string) => void;
+  value: T;
+  onChange: (newValue: T) => void;
 }
 
-export function RadioGroup(props: RadioGroup) {
+export function RadioGroup<T extends string = string>(props: RadioGroup<T>) {
   return (
     <>
       {props.options.map((option) => (
@@ -19,7 +19,9 @@ export function RadioGroup(props: RadioGroup) {
           label={option.label}
           value={option.value}
           checked={option.value === props.value}
-          onChange={(e) => props.onChange((e.target as HTMLInputElement).value)}
+          onChange={(e) =>
+            props.onChange((e.target as HTMLInputElement).value as T)
+          }
         />
       ))}
     </>

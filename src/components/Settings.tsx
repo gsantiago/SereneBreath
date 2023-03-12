@@ -11,6 +11,7 @@ import { Select } from "./Select";
 
 import { useTranslation } from "../hooks/useTranslation";
 
+import { Settings as SettingsType } from "../config/types";
 import { techniques } from "../config/techniques";
 
 export interface SettingsProps {
@@ -78,7 +79,7 @@ export function Settings({ isVisible }: SettingsProps) {
         }
         bottom={
           guide !== "disabled" && (
-            <RadioGroup
+            <RadioGroup<SettingsType["guide"]>
               name="guide"
               value={guide}
               onChange={setGuide}
@@ -95,7 +96,7 @@ export function Settings({ isVisible }: SettingsProps) {
         id="theme"
         label={t("settings.theme.title")}
         bottom={
-          <Toggle
+          <Toggle<SettingsType["theme"]>
             id="theme"
             name="theme"
             value={theme}

@@ -1,17 +1,23 @@
 import React from "react";
 import { Option } from "../config/types";
 
-export interface SelectProps
-  extends Omit<React.HTMLProps<HTMLSelectElement>, "onChange"> {
-  onChange: (value: string) => void;
+export interface SelectProps<T>
+  extends Omit<React.HTMLProps<HTMLSelectElement>, "onChange" | "value"> {
+  value: T;
+  onChange: (value: T) => void;
   options: Option[];
 }
 
-export function Select({ value, onChange, options, ...props }: SelectProps) {
+export function Select<T extends string = string>({
+  value,
+  onChange,
+  options,
+  ...props
+}: SelectProps<T>) {
   return (
     <select
       value={value}
-      onChange={(e) => onChange(e.target.value)}
+      onChange={(e) => onChange(e.target.value as T)}
       className="w-full cursor-pointer rounded-md border-gray-300 text-sm dark:text-gray-700"
       {...props}
     >
