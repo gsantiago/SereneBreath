@@ -57,7 +57,6 @@ function App() {
 
       {!isActive && (
         <Start
-          autoFocus
           onClick={() => {
             setShowHeaderAndFooter(false);
 
