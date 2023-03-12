@@ -1,7 +1,12 @@
 import { render, axe } from "@/test-utils";
-import { About } from "@/components/About";
+import { ButtonIcon } from "@/components/ButtonIcon";
 
-const setup = () => render(<About isVisible />);
+const setup = () =>
+  render(
+    <ButtonIcon title="Home">
+      <span id="home-icon" />
+    </ButtonIcon>
+  );
 
 test("renders successfuly", () => {
   const { container } = setup();

@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders successfuly 1`] = `
+<div>
+  <svg
+    height="200"
+    width="200"
+  >
+    <circle
+      class="fill-blue-600"
+      cx="100"
+      cy="100"
+      r="100"
+    />
+    <circle
+      class="fill-sky-100 dark:fill-slate-900"
+      cx="100"
+      cy="100"
+      r="20"
+    />
+  </svg>
+</div>
+`;

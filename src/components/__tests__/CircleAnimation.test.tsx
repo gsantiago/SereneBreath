@@ -1,7 +1,8 @@
 import { render, axe } from "@/test-utils";
-import { About } from "@/components/About";
+import { CircleAnimation } from "@/components/CircleAnimation";
 
-const setup = () => render(<About isVisible />);
+const setup = () =>
+  render(<CircleAnimation currentStep={0} pattern={[2, 2, 2, 2]} />);
 
 test("renders successfuly", () => {
   const { container } = setup();

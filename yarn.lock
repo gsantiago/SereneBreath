@@ -8384,6 +8384,17 @@ vitest-axe@^0.1.0:
     lodash-es "^4.17.21"
     redent "^3.0.0"
 
+vitest-dom@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/vitest-dom/-/vitest-dom-0.0.4.tgz#6e94d9499b7300f084875403ee24388bdef39587"
+  integrity sha512-xZqjd+97Y0lc1Rgs9COpsBR34gTfMn/hzoT985NPiJyMGT3Miu5jhtmZ5r+1SKJUXjMfIrHofL+udfa926NUfA==
+  dependencies:
+    aria-query "^5.0.0"
+    chalk "^5.0.1"
+    dom-accessibility-api "^0.5.14"
+    lodash-es "^4.17.21"
+    redent "^3.0.0"
+
 vitest@^0.29.2:
   version "0.29.2"
   resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.29.2.tgz#0376b547169ddefbde3fbc040b48569ec61d6179"

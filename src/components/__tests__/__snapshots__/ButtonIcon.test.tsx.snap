@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders successfuly 1`] = `
+<div>
+  <button
+    class="px-2 pb-2 pt-2 text-3xl dark:text-white rounded-md hover:bg-white hover:shadow-sm dark:hover:bg-slate-800"
+    title="Home"
+    type="button"
+  >
+    <span
+      id="home-icon"
+    />
+  </button>
+</div>
+`;

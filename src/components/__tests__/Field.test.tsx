@@ -1,7 +1,16 @@
 import { render, axe } from "@/test-utils";
-import { About } from "@/components/About";
+import { Field } from "@/components/Field";
 
-const setup = () => render(<About isVisible />);
+const setup = () =>
+  render(
+    <Field
+      id="field-id"
+      label="Label"
+      description="Description"
+      bottom={<>bottom</>}
+      children={<>children</>}
+    />
+  );
 
 test("renders successfuly", () => {
   const { container } = setup();
