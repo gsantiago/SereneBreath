@@ -1,0 +1,59 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders successfuly 1`] = `
+<div>
+  <div
+    class="absolute  w-full rounded-md  bg-white py-2 shadow-md dark:bg-slate-800 sm:w-80  right-0 bottom-full rounded-br-none z-10"
+  >
+    <section
+      class="px-3 py-1"
+    >
+      <h1
+        class="text-lg font-bold"
+      >
+        SereneBreath
+      </h1>
+      <p
+        class="mt-2 text-xs"
+      >
+        SereneBreath.com is a small webapp to help you improve your breathing, relaxing and managing your stress.
+      </p>
+      <p
+        class="mt-2 text-xs"
+      >
+        This project is open source and open for new contributions. Check out its repo for more info:
+         
+        <a
+          class="text-blue-600 underline dark:text-sky-300"
+          href="https://github.com/gsantiago/SereneBreath"
+          target="_blank"
+        >
+          Github Repo.
+        </a>
+      </p>
+      <p
+        class="mt-2 text-xs"
+      >
+        English and bell audio files are from the great Breathly app, which also inspired this app.
+         
+        <a
+          class="text-blue-600 underline dark:text-sky-300"
+          href="https://breathly.app/"
+          target="_blank"
+        >
+          Breathly Site.
+        </a>
+      </p>
+      <div
+        class="mt-5 text-center"
+      >
+        <small
+          class="text-xs text-gray-400"
+        >
+          v0.0.1
+        </small>
+      </div>
+    </section>
+  </div>
+</div>
+`;

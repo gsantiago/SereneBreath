@@ -3,7 +3,7 @@ import { TextAnimated } from "./TextAnimated";
 
 export interface CountdownProps {
   /** Children that will be rendered when the countdown finishes */
-  children: () => React.ReactNode;
+  children: () => JSX.Element;
 }
 
 /**

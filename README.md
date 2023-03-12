@@ -1,5 +1,7 @@
 # SereneBreath
 
+[![build](https://github.com/gsantiago/SereneBreath/actions/workflows/build.yml/badge.svg)](https://github.com/gsantiago/SereneBreath/actions/workflows/build.yml)
+
 [SereneBreath.com](https://serenebreath.com) is a small webapp to help you improve your breathing, relaxing and managing your stress.
 
 ## Stack
