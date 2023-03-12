@@ -1,9 +1,10 @@
+import { Settings } from "@/config/types";
 import { useEffect } from "react";
 import * as storage from "../modules/storage";
 
 export function useThemeSupport() {
   useEffect(() => {
-    const checkTheme = (theme: string): void => {
+    const checkTheme = (theme: Settings["theme"]): void => {
       if (theme === "system") {
         return checkTheme(
           window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -17,6 +18,6 @@ export function useThemeSupport() {
 
     checkTheme(storage.getItem("theme"));
 
-    return storage.subscribe("theme", (value) => checkTheme(value as string));
+    return storage.subscribe("theme", checkTheme);
   }, []);
 }

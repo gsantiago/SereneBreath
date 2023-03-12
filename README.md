@@ -1,16 +1,18 @@
 # SereneBreath
 
 [![build](https://github.com/gsantiago/SereneBreath/actions/workflows/build.yml/badge.svg)](https://github.com/gsantiago/SereneBreath/actions/workflows/build.yml)
+![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/gsantiago/SereneBreath)
 
 [SereneBreath.com](https://serenebreath.com) is a small webapp to help you improve your breathing, relaxing and managing your stress.
 
 ## Stack
 
-- Vite
+- TypeScript
 - React
 - React Spring
 - Tailwind
 - Storybook
+- Vite
 - Vitest
 - Vercel
 
