@@ -7,3 +7,6 @@ import { expect } from "vitest";
 
 expect.extend(axeMatchers);
 expect.extend(domMatchers);
+
+// @ts-ignore
+window.getComputedStyle = () => {};
