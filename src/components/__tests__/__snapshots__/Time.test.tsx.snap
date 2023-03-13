@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders successfuly 1`] = `
+<div>
+  <p
+    class="m-0 text-center text-4xl font-semibold dark:text-white"
+  >
+    01:40
+  </p>
+</div>
+`;

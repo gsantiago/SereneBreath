@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders successfuly 1`] = `
+<div>
+  <button
+    class="mb-20 h-48 w-48 rounded-full bg-blue-600 p-0 text-4xl font-semibold text-white shadow-xl hover:bg-blue-700 focus:outline-sky-500  md:mb-0"
+    type="button"
+  >
+    Start
+  </button>
+</div>
+`;

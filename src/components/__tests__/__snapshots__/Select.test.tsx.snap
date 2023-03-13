@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders successfuly 1`] = `
+<div>
+  <div>
+    <label
+      for="selectFruit"
+    >
+      Select fruit:
+    </label>
+    <select
+      class="w-full cursor-pointer rounded-md border-gray-300 text-sm dark:text-gray-700"
+      id="selectFruit"
+      name="fruit"
+    >
+      <option
+        value="Apple"
+      >
+        Apple
+      </option>
+      <option
+        value="Banana"
+      >
+        Banana
+      </option>
+      <option
+        value="Orange"
+      >
+        Orange
+      </option>
+    </select>
+  </div>
+</div>
+`;

@@ -55,5 +55,9 @@
   "footer": {
     "language": "Language",
     "about": "About"
+  },
+  "stepper": {
+    "increase": "Increase",
+    "decrease": "Decrease"
   }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export interface StepperProps {
   value: number;
@@ -13,10 +14,12 @@ export function Stepper({
   min = -Infinity,
   max = Infinity,
 }: StepperProps) {
+  const { t } = useTranslation();
+
   return (
     <div className="inline-flex items-center">
       <Control
-        title="Decrease"
+        title={t("stepper.decrease")}
         onClick={() => {
           if (value > min) {
             onChange(value - 1);
@@ -27,7 +30,7 @@ export function Stepper({
       </Control>
       <p className="mx-2 w-4 text-center text-sm dark:text-white">{value}</p>
       <Control
-        title="Increase"
+        title={t("stepper.increase")}
         onClick={() => {
           if (value < max) {
             onChange(value + 1);

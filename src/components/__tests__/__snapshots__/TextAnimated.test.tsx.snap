@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders successfuly 1`] = `
+<div>
+  <p
+    style="opacity: 0; transform: translate3d(0,-10px,0);"
+  >
+    One
+  </p>
+</div>
+`;

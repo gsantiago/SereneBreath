@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders successfuly 1`] = `
+<div>
+  <div
+    class="flex"
+  >
+    <label
+      class="cursor-pointer border  py-2 px-3 text-xs first:rounded-tl-md first:rounded-bl-md first:border-r-0 last:rounded-tr-md last:rounded-br-md last:border-l-0 hover:border-blue-600 hover:bg-blue-600 hover:text-white border-gray-300 bg-gray-50"
+    >
+      <input
+        class="sr-only"
+        name="fruit"
+        type="radio"
+        value="Apple"
+      />
+      Apple
+    </label>
+    <label
+      class="cursor-pointer border  py-2 px-3 text-xs first:rounded-tl-md first:rounded-bl-md first:border-r-0 last:rounded-tr-md last:rounded-br-md last:border-l-0 hover:border-blue-600 hover:bg-blue-600 hover:text-white border-gray-300 bg-gray-50"
+    >
+      <input
+        class="sr-only"
+        name="fruit"
+        type="radio"
+        value="Banana"
+      />
+      Banana
+    </label>
+    <label
+      class="cursor-pointer border  py-2 px-3 text-xs first:rounded-tl-md first:rounded-bl-md first:border-r-0 last:rounded-tr-md last:rounded-br-md last:border-l-0 hover:border-blue-600 hover:bg-blue-600 hover:text-white border-gray-300 bg-gray-50"
+    >
+      <input
+        class="sr-only"
+        name="fruit"
+        type="radio"
+        value="Orange"
+      />
+      Orange
+    </label>
+  </div>
+</div>
+`;
