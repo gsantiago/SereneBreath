@@ -4,6 +4,7 @@ exports[`renders successfuly 1`] = `
 <div>
   <footer
     class="relative flex w-full justify-between text-xs transition-opacity dark:text-white opacity-1"
+    data-testid="footer"
   >
     <div
       class="w-40"

@@ -4,6 +4,7 @@ exports[`renders successfuly 1`] = `
 <div>
   <header
     class="relative flex w-full items-center justify-between"
+    data-testid="header"
     style="opacity: 0; transform: none;"
   >
     <h1

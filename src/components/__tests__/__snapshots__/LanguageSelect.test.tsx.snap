@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders successfuly 1`] = `
+<div>
+  <div>
+    <label
+      class="sr-only"
+      for="locale"
+    >
+      Language
+    </label>
+    <select
+      class="w-full cursor-pointer rounded-md border-gray-300 text-sm dark:text-gray-700"
+      id="locale"
+    >
+      <option
+        value="en"
+      >
+        English
+      </option>
+      <option
+        value="pt"
+      >
+        Português
+      </option>
+    </select>
+  </div>
+</div>
+`;

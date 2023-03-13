@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders successfuly 1`] = `
+<div>
+  <a
+    class="text-blue-600 underline dark:text-sky-300"
+    href="/path"
+    target="_blank"
+  >
+    Click me
+  </a>
+</div>
+`;

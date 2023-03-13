@@ -29,6 +29,7 @@ export const Header = ({
 
   return (
     <animated.header
+      data-testid="header"
       style={headerStyles}
       className="relative flex w-full items-center justify-between"
     >

@@ -14,6 +14,7 @@ export function Footer({ isVisible, showAbout, onToggleAbout }: FooterProps) {
 
   return (
     <footer
+      data-testid="footer"
       className={`relative flex w-full justify-between text-xs transition-opacity dark:text-white ${
         isVisible ? "opacity-1" : "opacity-0"
       }`}

@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders successfuly at bottom position 1`] = `
+<div>
+  <div
+    class="absolute  w-full rounded-md  bg-white py-2 shadow-md dark:bg-slate-800 sm:w-80  right-0 bottom-full rounded-br-none z-10"
+  >
+    content
+  </div>
+</div>
+`;
+
+exports[`renders successfuly at top position 1`] = `
+<div>
+  <div
+    class="absolute  w-full rounded-md  bg-white py-2 shadow-md dark:bg-slate-800 sm:w-80  right-0 top-full rounded-tr-none z-10"
+  >
+    content
+  </div>
+</div>
+`;
