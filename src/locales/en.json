@@ -51,5 +51,9 @@
       "hold": "/en/male_hold.mp3",
       "exhale": "/en/male_exhale.mp3"
     }
+  },
+  "footer": {
+    "language": "Language",
+    "about": "About"
   }
 }

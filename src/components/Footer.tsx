@@ -1,6 +1,7 @@
 import { About } from "@/components/About";
 import { ButtonIcon } from "@/components/ButtonIcon";
 import { LanguageSelect } from "@/components/LanguageSelect";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export interface FooterProps {
   isVisible: boolean;
@@ -9,6 +10,8 @@ export interface FooterProps {
 }
 
 export function Footer({ isVisible, showAbout, onToggleAbout }: FooterProps) {
+  const { t } = useTranslation();
+
   return (
     <footer
       className={`relative flex w-full justify-between text-xs transition-opacity dark:text-white ${
@@ -19,7 +22,7 @@ export function Footer({ isVisible, showAbout, onToggleAbout }: FooterProps) {
         <LanguageSelect />
       </div>
       <ButtonIcon
-        title="About"
+        title={t("footer.about")}
         isActive={showAbout}
         position="bottom"
         onClick={onToggleAbout}
