@@ -1,5 +1,4 @@
-import React from "react";
-import { Option } from "../config/types";
+import { Option } from "@/config/types";
 
 export interface ToggleProps<T> {
   id: string;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import { Footer } from "./Footer";
-import { Header } from "./Header";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 export interface LayoutProps {
   showHeaderAndFooter: boolean;

@@ -1,6 +1,7 @@
-import { Settings } from "@/config/types";
 import { useEffect } from "react";
-import * as storage from "../modules/storage";
+
+import { Settings } from "@/config/types";
+import * as storage from "@/modules/storage";
 
 export function useThemeSupport() {
   useEffect(() => {

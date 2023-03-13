@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useSpring } from "@react-spring/web";
 
-import { techniques } from "./config/techniques";
-
 import { Layout } from "./components/Layout";
 import { Countdown } from "./components/Countdown";
 import { Exercise } from "./components/Exercise";
@@ -10,6 +8,8 @@ import { Start } from "./components/Start";
 
 import { useStorage } from "./hooks/useStorage";
 import { useThemeSupport } from "./hooks/useThemeSupport";
+
+import { techniques } from "./config/techniques";
 
 function App() {
   const [isActive, setIsActive] = useState(false);

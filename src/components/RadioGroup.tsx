@@ -1,6 +1,5 @@
-import React from "react";
-import { Radio } from "./Radio";
-import { Option } from "../config/types";
+import { Radio } from "@/components/Radio";
+import { Option } from "@/config/types";
 
 export interface RadioGroup<T> {
   name: string;

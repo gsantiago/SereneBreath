@@ -1,7 +1,7 @@
 import objectPath from "object-path";
 
-import { translations } from "../config/translations";
-import { getItem } from "./storage";
+import { translations } from "@/config/translations";
+import { getItem } from "@/modules/storage";
 
 type NestedKeyOf<ObjectType extends object> = {
   [Key in keyof ObjectType & (string | number)]: ObjectType[Key] extends object

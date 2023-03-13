@@ -1,6 +1,6 @@
 import mitt from "mitt";
-import { Settings } from "../config/types";
-import { translations, LocaleKey } from "../config/translations";
+import { Settings } from "@/config/types";
+import { translations, LocaleKey } from "@/config/translations";
 
 const STORAGE_VERSION = "0";
 

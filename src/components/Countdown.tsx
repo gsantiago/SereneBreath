@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { TextAnimated } from "./TextAnimated";
+import { useEffect, useState } from "react";
+import { TextAnimated } from "@/components/TextAnimated";
 
 export interface CountdownProps {
   /** Children that will be rendered when the countdown finishes */

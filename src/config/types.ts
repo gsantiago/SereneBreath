@@ -1,4 +1,4 @@
-import { LocaleKey } from "../config/translations";
+import { LocaleKey } from "@/config/translations";
 
 export type Settings = {
   technique: string;

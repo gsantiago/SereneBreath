@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { animated, useSpring } from "@react-spring/web";
-import { AnimationProps } from "../config/types";
+
+import { AnimationProps } from "@/config/types";
 
 const WIDTH = 200;
 const HEIGHT = 200;

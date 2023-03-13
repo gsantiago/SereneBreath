@@ -1,10 +1,9 @@
-import React from "react";
 import { animated, useSpring, config } from "@react-spring/web";
 
-import { Settings } from "./Settings";
-import { ButtonIcon } from "./ButtonIcon";
+import { Settings } from "@/components/Settings";
+import { ButtonIcon } from "@/components/ButtonIcon";
 
-import { useTranslation } from "../hooks/useTranslation";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export interface HeaderProps {
   isVisible: boolean;

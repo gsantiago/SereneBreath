@@ -1,15 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { animated, useSpring } from "@react-spring/web";
 
-import { exerciseManager } from "../modules/ExerciseManager";
-import { AudioManager } from "../modules/AudioManager";
+import { exerciseManager } from "@/modules/ExerciseManager";
+import { AudioManager } from "@/modules/AudioManager";
 
-import { Time } from "./Time";
-import { StepIndicator } from "./StepIndicator";
-import { CircleAnimation } from "./CircleAnimation";
+import { Time } from "@/components/Time";
+import { StepIndicator } from "@/components/StepIndicator";
+import { CircleAnimation } from "@/components/CircleAnimation";
 
-import { Pattern, Settings } from "../config/types";
-import { useTranslation } from "../hooks/useTranslation";
+import { Pattern, Settings } from "@/config/types";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export interface ExerciseProps {
   guide: Settings["guide"];

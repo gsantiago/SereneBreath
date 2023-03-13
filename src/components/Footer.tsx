@@ -1,7 +1,6 @@
-import React from "react";
-import { About } from "./About";
-import { ButtonIcon } from "./ButtonIcon";
-import { LanguageSelect } from "./LanguageSelect";
+import { About } from "@/components/About";
+import { ButtonIcon } from "@/components/ButtonIcon";
+import { LanguageSelect } from "@/components/LanguageSelect";
 
 export interface FooterProps {
   isVisible: boolean;

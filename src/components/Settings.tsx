@@ -1,18 +1,16 @@
-import React from "react";
+import { Field } from "@/components/Field";
+import { Stepper } from "@/components/Stepper";
+import { RadioGroup } from "@/components/RadioGroup";
+import { Switch } from "@/components/Switch";
+import { Toggle } from "@/components/Toggle";
+import { Popover } from "@/components/Popover";
+import { Select } from "@/components/Select";
 
-import { Field } from "./Field";
-import { Stepper } from "./Stepper";
-import { RadioGroup } from "./RadioGroup";
-import { Switch } from "./Switch";
-import { useStorage } from "../hooks/useStorage";
-import { Toggle } from "./Toggle";
-import { Popover } from "./Popover";
-import { Select } from "./Select";
+import { useStorage } from "@/hooks/useStorage";
+import { useTranslation } from "@/hooks/useTranslation";
 
-import { useTranslation } from "../hooks/useTranslation";
-
-import { Settings as SettingsType } from "../config/types";
-import { techniques } from "../config/techniques";
+import { techniques } from "@/config/techniques";
+import { Settings as SettingsType } from "@/config/types";
 
 export interface SettingsProps {
   isVisible: boolean;

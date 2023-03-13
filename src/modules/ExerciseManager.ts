@@ -1,5 +1,5 @@
 import mitt from "mitt";
-import { Pattern } from "../config/types";
+import { Pattern } from "@/config/types";
 
 const SECOND = 1000;
 

@@ -1,7 +1,5 @@
-import React from "react";
-import { TextAnimated } from "./TextAnimated";
-
-import { useTranslation } from "../hooks/useTranslation";
+import { TextAnimated } from "@/components/TextAnimated";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const STEPS = ["inhale", "hold", "exhale", "hold"] as const;
 

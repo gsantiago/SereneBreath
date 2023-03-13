@@ -1,5 +1,5 @@
 import React from "react";
-import { Option } from "../config/types";
+import { Option } from "@/config/types";
 
 export interface SelectProps<T>
   extends Omit<React.HTMLProps<HTMLSelectElement>, "onChange" | "value"> {

@@ -1,7 +1,6 @@
-import React from "react";
-import { Popover } from "./Popover";
-import { Link } from "./Link";
-import { useTranslation } from "../hooks/useTranslation";
+import { Popover } from "@/components/Popover";
+import { Link } from "@/components/Link";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export interface AboutProps {
   isVisible: boolean;

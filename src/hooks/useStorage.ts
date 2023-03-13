@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import * as storage from "../modules/storage";
+import * as storage from "@/modules/storage";
 
 export function useStorage<K extends storage.Key>(
   key: K

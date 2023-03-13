@@ -1,4 +1,4 @@
-import { Technique } from "./types";
+import { Technique } from "@/config/types";
 
 export const techniques: Technique[] = [
   {
