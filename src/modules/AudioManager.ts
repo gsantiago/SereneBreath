@@ -7,7 +7,7 @@ export class AudioManager {
   private steps: Array<HTMLAudioElement | undefined> = [];
   private bell = new Audio("/audio/bell.mp3");
 
-  private lastPlayedAudio = "";
+  private lastPlayedStep = -1;
 
   constructor(guide: Guide) {
     const tracks = this.getTracks(guide);
@@ -39,14 +39,16 @@ export class AudioManager {
   }
 
   private playSound(audio?: HTMLAudioElement) {
-    if (audio && this.lastPlayedAudio !== audio.src) {
+    if (audio) {
       audio.play();
-      this.lastPlayedAudio = audio.src;
     }
   }
 
   playStep(step: number) {
-    this.playSound(this.steps[step]);
+    if (this.lastPlayedStep !== step) {
+      this.playSound(this.steps[step]);
+      this.lastPlayedStep = step;
+    }
   }
 
   playBell() {
