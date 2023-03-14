@@ -58,23 +58,19 @@ export function Exercise({
 
   useEffect(() => {
     const audio = audioRef.current;
-    const exercise = exerciseManager(seconds, pattern);
+    const exercise = exerciseManager({
+      seconds,
+      pattern,
+      vibration: vibrateOnStepChange,
+    });
 
     exercise.on("update", setData);
 
     exercise.on("step", (step) => {
       audioRef.current.playStep(step);
-
-      if (vibrateOnStepChange) {
-        navigator.vibrate(200);
-      }
     });
 
     exercise.on("end", () => {
-      if (vibrateOnStepChange) {
-        navigator.vibrate(2000);
-      }
-
       audio.playBell();
 
       contentSpring.start({

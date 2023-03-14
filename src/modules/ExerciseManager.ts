@@ -9,7 +9,17 @@ type Events = {
   end: undefined;
 };
 
-export function exerciseManager(seconds: number, pattern: Pattern) {
+interface ExerciseManagerOptions {
+  seconds: number;
+  pattern: Pattern;
+  vibration: boolean;
+}
+
+export function exerciseManager({
+  seconds,
+  pattern,
+  vibration,
+}: ExerciseManagerOptions) {
   const emitter = mitt<Events>();
 
   let intervalId: NodeJS.Timer;
@@ -46,6 +56,18 @@ export function exerciseManager(seconds: number, pattern: Pattern) {
       clearInterval(intervalId);
     }
   };
+
+  emitter.on("step", () => {
+    if (vibration) {
+      navigator.vibrate(200);
+    }
+  });
+
+  emitter.on("end", () => {
+    if (vibration) {
+      navigator.vibrate(2000);
+    }
+  });
 
   return {
     start: () => {
