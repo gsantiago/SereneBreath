@@ -9,7 +9,7 @@ type NestedKeyOf<ObjectType extends object> = {
     : `${Key}`;
 }[keyof ObjectType & (string | number)];
 
-type TranslationKey = NestedKeyOf<typeof translations.en>;
+export type TranslationKey = NestedKeyOf<typeof translations.en>;
 
 export function translate(key: TranslationKey): string {
   const locale = getItem("locale");

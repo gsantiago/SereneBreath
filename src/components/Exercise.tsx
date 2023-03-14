@@ -30,23 +30,7 @@ export function Exercise({
 
   const [data, setData] = useState({ seconds, step: 0 });
 
-  const getTracks = (): [string, string, string] => {
-    if (guide === "bell") {
-      return ["/bell_1.mp3", "/bell_2.mp3", "/bell_1.mp3"];
-    }
-
-    if (guide === "disabled") {
-      return ["", "", ""];
-    }
-
-    return [
-      t(`audio.${guide}.inhale`),
-      t(`audio.${guide}.hold`),
-      t(`audio.${guide}.exhale`),
-    ];
-  };
-
-  const audioRef = useRef(new AudioManager(getTracks()));
+  const audioRef = useRef(new AudioManager(guide));
 
   const [containerStyle, containerSpring] = useSpring(() => ({
     from: {

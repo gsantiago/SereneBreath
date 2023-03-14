@@ -42,9 +42,9 @@
   },
   "audio": {
     "female": {
-      "inhale": "/pt/female_inhale.mp3",
-      "hold": "/pt/female_hold.mp3",
-      "exhale": "/pt/female_exhale.mp3"
+      "inhale": "pt/female_inhale.mp3",
+      "hold": "pt/female_hold.mp3",
+      "exhale": "pt/female_exhale.mp3"
     }
   },
   "footer": {
