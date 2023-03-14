@@ -2,16 +2,16 @@ import { Technique } from "@/config/types";
 
 export const techniques: Technique[] = [
   {
-    name: "Square",
-    description:
-      "Box breathing, also referred to as square breathing, can help you slow down your breathing and reduce stress.",
-    pattern: [4, 4, 4, 4],
-  },
-  {
     name: "Awake",
     description:
       "Use this technique first thing in the morning for quick burst of energy and alertness.",
     pattern: [6, 0, 2, 0],
+  },
+  {
+    name: "Square",
+    description:
+      "Box breathing, also referred to as square breathing, can help you slow down your breathing and reduce stress.",
+    pattern: [4, 4, 4, 4],
   },
   {
     name: "Deep Calm",
