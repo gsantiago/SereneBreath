@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { animated, useSpring } from "@react-spring/web";
 
 import { exerciseManager } from "@/modules/ExerciseManager";
-import { AudioManager } from "@/modules/AudioManager";
 
 import { Time } from "@/components/Time";
 import { StepIndicator } from "@/components/StepIndicator";
@@ -30,8 +29,6 @@ export function Exercise({
 
   const [data, setData] = useState({ seconds, step: 0 });
 
-  const audioRef = useRef(new AudioManager(guide));
-
   const [containerStyle, containerSpring] = useSpring(() => ({
     from: {
       opacity: 0,
@@ -57,22 +54,16 @@ export function Exercise({
   }));
 
   useEffect(() => {
-    const audio = audioRef.current;
     const exercise = exerciseManager({
       seconds,
       pattern,
       vibration: vibrateOnStepChange,
+      guide,
     });
 
     exercise.on("update", setData);
 
-    exercise.on("step", (step) => {
-      audioRef.current.playStep(step);
-    });
-
     exercise.on("end", () => {
-      audio.playBell();
-
       contentSpring.start({
         to: {
           opacity: 0,

@@ -1,5 +1,6 @@
 import mitt from "mitt";
-import { Pattern } from "@/config/types";
+import { Pattern, Settings } from "@/config/types";
+import { AudioManager } from "./AudioManager";
 
 const SECOND = 1000;
 
@@ -9,18 +10,24 @@ type Events = {
   end: undefined;
 };
 
+const audio = new AudioManager();
+
 interface ExerciseManagerOptions {
   seconds: number;
   pattern: Pattern;
   vibration: boolean;
+  guide: Settings["guide"];
 }
 
 export function exerciseManager({
   seconds,
   pattern,
   vibration,
+  guide,
 }: ExerciseManagerOptions) {
   const emitter = mitt<Events>();
+
+  audio.setTracks(guide);
 
   let intervalId: NodeJS.Timer;
   let step = 0;
@@ -57,13 +64,17 @@ export function exerciseManager({
     }
   };
 
-  emitter.on("step", () => {
+  emitter.on("step", (step) => {
+    audio.playStep(step);
+
     if (vibration) {
       navigator.vibrate(200);
     }
   });
 
   emitter.on("end", () => {
+    audio.playBell();
+
     if (vibration) {
       navigator.vibrate(2000);
     }

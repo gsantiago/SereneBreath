@@ -9,7 +9,7 @@ export class AudioManager {
 
   private lastPlayedStep = -1;
 
-  constructor(guide: Guide) {
+  setTracks(guide: Guide) {
     const tracks = this.getTracks(guide);
 
     const inhale = this.loadAudio(tracks[0]);
