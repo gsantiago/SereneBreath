@@ -1,6 +1,8 @@
 import mitt from "mitt";
 import { Pattern, Settings } from "@/config/types";
+
 import * as sounds from "@/modules/sounds";
+import { createVibrator } from "@/modules/vibrator";
 
 type Events = {
   update: { seconds: number; step: number };
@@ -22,6 +24,7 @@ export function exerciseManager({
   guide,
 }: ExerciseManagerOptions) {
   const emitter = mitt<Events>();
+  const vibrator = createVibrator({ enabled: vibration });
 
   sounds.loadGuideTracks(guide);
 
@@ -62,18 +65,12 @@ export function exerciseManager({
 
   emitter.on("step", (step) => {
     sounds.playStepGuide(guide, step);
-
-    if (vibration) {
-      navigator.vibrate(200);
-    }
+    vibrator.vibrate(200);
   });
 
   emitter.on("end", () => {
     sounds.playBell();
-
-    if (vibration) {
-      navigator.vibrate(2000);
-    }
+    vibrator.vibrate(2000);
   });
 
   return {

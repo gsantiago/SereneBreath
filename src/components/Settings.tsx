@@ -12,11 +12,11 @@ import { useTranslation } from "@/hooks/useTranslation";
 import { techniques } from "@/config/techniques";
 import { Settings as SettingsType } from "@/config/types";
 
+import { canVibrate } from "@/modules/vibrator";
+
 export interface SettingsProps {
   isVisible: boolean;
 }
-
-const canVibrate = "vibrate" in navigator;
 
 export function Settings({ isVisible }: SettingsProps) {
   const { t } = useTranslation();
