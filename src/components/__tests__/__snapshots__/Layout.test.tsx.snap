@@ -439,7 +439,8 @@ exports[`renders successfuly 1`] = `
               <small
                 class="text-xs text-gray-400"
               >
-                v0.0.1
+                v
+                0.0.1
               </small>
             </div>
           </section>

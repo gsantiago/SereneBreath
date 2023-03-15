@@ -2,6 +2,8 @@ import { Popover } from "@/components/Popover";
 import { Link } from "@/components/Link";
 import { useTranslation } from "@/hooks/useTranslation";
 
+import packageJSON from "../../package.json";
+
 export interface AboutProps {
   isVisible: boolean;
 }
@@ -25,7 +27,9 @@ export function About({ isVisible }: AboutProps) {
           <Link href="https://breathly.app/">Breathly Site.</Link>
         </p>
         <div className="mt-5 text-center">
-          <small className="text-xs text-gray-400">v0.0.1</small>
+          <small className="text-xs text-gray-400">
+            v{packageJSON.version}
+          </small>
         </div>
       </section>
     </Popover>
