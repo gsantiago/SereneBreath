@@ -64,5 +64,27 @@
   "stepper": {
     "increase": "Increase",
     "decrease": "Decrease"
+  },
+  "techniques": {
+    "awake": {
+      "title": "Awake",
+      "description": "Use this technique first thing in the morning for quick burst of energy and alertness."
+    },
+    "square": {
+      "title": "Square",
+      "description": "Box breathing, also referred to as square breathing, can help you slow down your breathing and reduce stress."
+    },
+    "deepCalm": {
+      "title": "Deep Calm",
+      "description": "A natural tranquilizer for the nervous system. Do it at least twice a day."
+    },
+    "pranayama": {
+      "title": "Pranayama",
+      "description": "A main component of yoga, an exercise for physical and mental wellness."
+    },
+    "ujjayi": {
+      "title": "Ujjayi",
+      "description": "Balance influence on the cardiorespiratory system, release fellings of irritation, and calm the mind and body."
+    }
   }
 }

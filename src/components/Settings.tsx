@@ -37,9 +37,11 @@ export function Settings({ isVisible }: SettingsProps) {
             id="technique"
             value={technique}
             onChange={setTechnique}
-            options={techniques.map((t) => ({
-              label: `${t.name} (${t.pattern.join("-")})`,
-              value: t.name,
+            options={techniques.map((option) => ({
+              label: `${t(
+                `techniques.${option.name}.title`
+              )} (${option.pattern.join("-")})`,
+              value: option.name,
             }))}
           />
         }

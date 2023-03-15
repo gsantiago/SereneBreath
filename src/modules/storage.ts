@@ -2,7 +2,7 @@ import mitt from "mitt";
 import { Settings } from "@/config/types";
 import { translations, LocaleKey } from "@/config/translations";
 
-const STORAGE_VERSION = "0";
+const STORAGE_VERSION = "1";
 
 const browserLocale = getBrowserLocale().split("-")[0];
 
@@ -11,7 +11,7 @@ export const defaultLocale = (
 ) as LocaleKey;
 
 const defaultValues: Settings = {
-  technique: "Awake",
+  technique: "awake",
   time: 1,
   vibration: false,
   guide: "female",

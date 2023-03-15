@@ -4,7 +4,7 @@ import { useTranslation } from "@/hooks/useTranslation";
 
 export type StartProps = {
   onClick: () => void;
-  style: {
+  style?: {
     opacity: SpringValue<number>;
     scale: SpringValue<number>;
   };

@@ -54,5 +54,27 @@
   "stepper": {
     "increase": "Aumentar",
     "decrease": "Diminuir"
+  },
+  "techniques": {
+    "awake": {
+      "title": "Despertar",
+      "description": "Este esta técnica assim que acordar para uma explosão rápida de energia e estado de alerta."
+    },
+    "square": {
+      "title": "Quadrada",
+      "description": "A respiração em caixa, também conhecida como respiração quadrada, pode ajudá-lo a desacelerar a respiração e reduzir o estresse."
+    },
+    "deepCalm": {
+      "title": "Calma Profunda",
+      "description": "Um tranquilizante natural para o sistema nervoso. Faça isso pelo menos duas vezes por dia."
+    },
+    "pranayama": {
+      "title": "Pranayama",
+      "description": "Um dos pilares do yoga, um exercício para o bem-estar físico e mental."
+    },
+    "ujjayi": {
+      "title": "Ujjayi",
+      "description": "Equilibra a influência no sistema cardiorrespiratório, libera sentimentos de irritação e acalma a mente e o corpo."
+    }
   }
 }
