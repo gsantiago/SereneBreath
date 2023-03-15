@@ -68,7 +68,6 @@ function App() {
               onResolve: () => setIsActive(true),
             });
           }}
-          // @ts-ignore
           style={startStyle}
         />
       )}

@@ -1,11 +1,16 @@
-import React from "react";
-import { animated } from "@react-spring/web";
+import { animated, SpringValue } from "@react-spring/web";
 
 import { useTranslation } from "@/hooks/useTranslation";
 
-export function Start(
-  props: Pick<React.ComponentProps<"button">, "onClick" | "style">
-) {
+export type StartProps = {
+  onClick: () => void;
+  style: {
+    opacity: SpringValue<number>;
+    scale: SpringValue<number>;
+  };
+};
+
+export function Start(props: StartProps) {
   const { t } = useTranslation();
 
   return (
