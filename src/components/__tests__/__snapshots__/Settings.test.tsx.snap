@@ -33,27 +33,27 @@ exports[`renders successfuly 1`] = `
           id="technique"
         >
           <option
-            value="Awake"
+            value="awake"
           >
             Awake (6-0-2-0)
           </option>
           <option
-            value="Square"
+            value="square"
           >
             Square (4-4-4-4)
           </option>
           <option
-            value="Deep Calm"
+            value="deepCalm"
           >
             Deep Calm (4-7-8-0)
           </option>
           <option
-            value="Pranayama"
+            value="pranayama"
           >
             Pranayama (7-4-8-4)
           </option>
           <option
-            value="Ujjayi"
+            value="ujjayi"
           >
             Ujjayi (7-0-7-0)
           </option>

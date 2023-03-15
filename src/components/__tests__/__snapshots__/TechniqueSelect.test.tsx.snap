@@ -1,0 +1,61 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders successfuly 1`] = `
+<div>
+  <div
+    class="px-5 py-2"
+  >
+    <div
+      class="grid grid-cols-6 items-end"
+    >
+      <div
+        class="col-span-4"
+      >
+        <label
+          class="text-sm font-medium text-gray-800 dark:text-white"
+          for="technique"
+        >
+          Technique
+        </label>
+      </div>
+      <div
+        class="col-span-2 text-right"
+      />
+    </div>
+    <div
+      class="mt-2"
+    >
+      <select
+        class="w-full cursor-pointer rounded-md border-gray-300 text-sm dark:text-gray-700"
+        id="technique"
+      >
+        <option
+          value="awake"
+        >
+          Awake (6-0-2-0)
+        </option>
+        <option
+          value="square"
+        >
+          Square (4-4-4-4)
+        </option>
+        <option
+          value="deepCalm"
+        >
+          Deep Calm (4-7-8-0)
+        </option>
+        <option
+          value="pranayama"
+        >
+          Pranayama (7-4-8-4)
+        </option>
+        <option
+          value="ujjayi"
+        >
+          Ujjayi (7-0-7-0)
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+`;

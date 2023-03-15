@@ -1,7 +1,7 @@
 import { render, axe } from "@/test-utils";
-import { LanguageSelect } from "@/components/LanguageSelect";
+import { TechniqueSelect } from "@/components/TechniqueSelect";
 
-const setup = () => render(<LanguageSelect />);
+const setup = () => render(<TechniqueSelect />);
 
 test("renders successfuly", () => {
   const { container } = setup();
