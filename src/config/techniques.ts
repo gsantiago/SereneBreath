@@ -1,6 +1,4 @@
-import { Technique } from "@/config/types";
-
-export const techniques: Technique[] = [
+export const techniques = [
   {
     name: "Awake",
     description:
@@ -31,4 +29,4 @@ export const techniques: Technique[] = [
       "Balance influence on the cardiorespiratory system, release fellings of irritation, and calm the mind and body",
     pattern: [7, 0, 7, 0],
   },
-];
+] as const;

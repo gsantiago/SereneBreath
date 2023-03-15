@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useSpring } from "@react-spring/web";
 
-import { Layout } from "./components/Layout";
-import { Countdown } from "./components/Countdown";
-import { Practice } from "./components/Practice";
-import { Start } from "./components/Start";
+import { Layout } from "@/components/Layout";
+import { Countdown } from "@/components/Countdown";
+import { Practice } from "@/components/Practice";
+import { Start } from "@/components/Start";
 
-import { useStorage } from "./hooks/useStorage";
-import { useThemeSupport } from "./hooks/useThemeSupport";
+import { useStorage } from "@/hooks/useStorage";
+import { useThemeSupport } from "@/hooks/useThemeSupport";
 
-import { techniques } from "./config/techniques";
+import { techniques } from "@/config/techniques";
 
 function App() {
   const [isActive, setIsActive] = useState(false);
@@ -38,7 +38,7 @@ function App() {
               guide={guide}
               seconds={time * 60}
               vibrateOnStepChange={vibration}
-              pattern={techniques.find((p) => p.name === technique).pattern}
+              pattern={techniques.find((p) => p.name === technique)!.pattern}
               onClose={() => {
                 setShowHeaderAndFooter(true);
                 setIsActive(false);
@@ -68,6 +68,7 @@ function App() {
               onResolve: () => setIsActive(true),
             });
           }}
+          // @ts-ignore
           style={startStyle}
         />
       )}

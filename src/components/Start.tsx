@@ -3,7 +3,9 @@ import { animated } from "@react-spring/web";
 
 import { useTranslation } from "@/hooks/useTranslation";
 
-export function Start(props: Pick<React.ComponentProps<"button">, "onClick">) {
+export function Start(
+  props: Pick<React.ComponentProps<"button">, "onClick" | "style">
+) {
   const { t } = useTranslation();
 
   return (

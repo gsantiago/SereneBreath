@@ -1,7 +1,8 @@
 import { LocaleKey } from "@/config/translations";
+import { techniques } from "@/config/techniques";
 
 export type Settings = {
-  technique: string;
+  technique: (typeof techniques)[number]["name"];
   time: number;
   vibration: boolean;
   guide: "female" | "male" | "bell" | "disabled";
@@ -10,7 +11,7 @@ export type Settings = {
 };
 
 // inhale, hold, exhale, hold
-export type Pattern = [number, number, number, number];
+export type Pattern = readonly [number, number, number, number];
 
 export interface Technique {
   name: string;
