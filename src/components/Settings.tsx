@@ -4,12 +4,11 @@ import { RadioGroup } from "@/components/RadioGroup";
 import { Switch } from "@/components/Switch";
 import { Toggle } from "@/components/Toggle";
 import { Popover } from "@/components/Popover";
-import { Select } from "@/components/Select";
+import { TechniqueSelect } from "@/components/TechniqueSelect";
 
 import { useStorage } from "@/hooks/useStorage";
 import { useTranslation } from "@/hooks/useTranslation";
 
-import { techniques } from "@/config/techniques";
 import { Settings as SettingsType } from "@/config/types";
 
 import { canVibrate } from "@/modules/vibrator";
@@ -21,7 +20,6 @@ export interface SettingsProps {
 export function Settings({ isVisible }: SettingsProps) {
   const { t } = useTranslation();
 
-  const [technique, setTechnique] = useStorage("technique");
   const [time, setTime] = useStorage("time");
   const [vibration, setVibration] = useStorage("vibration");
   const [guide, setGuide] = useStorage("guide");
@@ -29,23 +27,7 @@ export function Settings({ isVisible }: SettingsProps) {
 
   return (
     <Popover isVisible={isVisible}>
-      <Field
-        id="technique"
-        label={t("settings.technique")}
-        bottom={
-          <Select
-            id="technique"
-            value={technique}
-            onChange={setTechnique}
-            options={techniques.map((option) => ({
-              label: `${t(
-                `techniques.${option.name}.title`
-              )} (${option.pattern.join("-")})`,
-              value: option.name,
-            }))}
-          />
-        }
-      />
+      <TechniqueSelect />
       <Field
         id="time"
         label={t("settings.time.title")}
