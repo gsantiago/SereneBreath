@@ -10,19 +10,19 @@ type Events = {
   end: undefined;
 };
 
-interface ExerciseManagerOptions {
+interface ExerciseOptions {
   seconds: number;
   pattern: Pattern;
   vibration: boolean;
   guide: Settings["guide"];
 }
 
-export function exerciseManager({
+export function createExercise({
   seconds,
   pattern,
   vibration,
   guide,
-}: ExerciseManagerOptions) {
+}: ExerciseOptions) {
   const emitter = mitt<Events>();
   const vibrator = createVibrator({ enabled: vibration });
 

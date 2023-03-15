@@ -3,7 +3,7 @@ import { useSpring } from "@react-spring/web";
 
 import { Layout } from "./components/Layout";
 import { Countdown } from "./components/Countdown";
-import { Exercise } from "./components/Exercise";
+import { Practice } from "./components/Practice";
 import { Start } from "./components/Start";
 
 import { useStorage } from "./hooks/useStorage";
@@ -34,7 +34,7 @@ function App() {
       {isActive && (
         <Countdown>
           {() => (
-            <Exercise
+            <Practice
               guide={guide}
               seconds={time * 60}
               vibrateOnStepChange={vibration}

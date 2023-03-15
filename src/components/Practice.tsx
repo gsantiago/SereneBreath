@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { animated, useSpring } from "@react-spring/web";
 
-import { exerciseManager } from "@/modules/ExerciseManager";
+import { createExercise } from "@/modules/exercise";
 
 import { Time } from "@/components/Time";
 import { StepIndicator } from "@/components/StepIndicator";
@@ -10,7 +10,7 @@ import { CircleAnimation } from "@/components/CircleAnimation";
 import { Pattern, Settings } from "@/config/types";
 import { useTranslation } from "@/hooks/useTranslation";
 
-export interface ExerciseProps {
+export interface PracticeProps {
   guide: Settings["guide"];
   vibrateOnStepChange: Settings["vibration"];
   pattern: Pattern;
@@ -18,13 +18,13 @@ export interface ExerciseProps {
   onClose: () => void;
 }
 
-export function Exercise({
+export function Practice({
   guide,
   vibrateOnStepChange,
   pattern,
   seconds,
   onClose,
-}: ExerciseProps) {
+}: PracticeProps) {
   const { t } = useTranslation();
 
   const [data, setData] = useState({ seconds, step: 0 });
@@ -54,7 +54,7 @@ export function Exercise({
   }));
 
   useEffect(() => {
-    const exercise = exerciseManager({
+    const exercise = createExercise({
       seconds,
       pattern,
       vibration: vibrateOnStepChange,

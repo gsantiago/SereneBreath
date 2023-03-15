@@ -1,8 +1,8 @@
-import { Exercise } from "../Exercise";
+import { Practice } from "../Practice";
 
 export default {
-  title: "Components/Exercise",
-  component: Exercise,
+  title: "Components/Practice",
+  component: Practice,
 };
 
 export const Default = {
