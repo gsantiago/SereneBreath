@@ -5,6 +5,7 @@ import { createExercise } from "@/modules/exercise";
 
 import { StepIndicator } from "@/components/StepIndicator";
 import { CircleAnimation } from "@/components/CircleAnimation";
+import { BreathAnimation } from "@/components/BreathAnimation";
 import { Close } from "@/components/Close";
 
 import { Pattern, Settings } from "@/config/types";
@@ -98,7 +99,8 @@ export function Practice({
         <animated.div style={contentStyle}>
           <StepIndicator step={data.step} />
           <div className="mt-20 mb-20">
-            <CircleAnimation pattern={pattern} currentStep={data.step} />
+            {/* <CircleAnimation pattern={pattern} currentStep={data.step} /> */}
+            <BreathAnimation pattern={pattern} currentStep={data.step} />
           </div>
         </animated.div>
       </div>
