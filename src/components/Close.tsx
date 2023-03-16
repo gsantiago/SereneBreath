@@ -69,7 +69,7 @@ export function Close({ onClick, duration, seconds }: CloseProps) {
         </svg>
         <div className="flex justify-center">
           <button
-            className="absolute top-12 flex h-10 w-10 items-center justify-center rounded-full border border-gray-600  hover:opacity-50 dark:border-white dark:text-white"
+            className="absolute top-12 flex h-14 w-14 items-center justify-center rounded-full border border-gray-600  hover:opacity-50 dark:border-white dark:text-white"
             title="Close"
             onClick={onClick}
           >
@@ -92,7 +92,7 @@ const closeIcon = (
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className="h-6 w-6"
+    className="h-7 w-7"
   >
     <path
       strokeLinecap="round"
