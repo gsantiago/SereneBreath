@@ -3,9 +3,9 @@ import { animated, useSpring } from "@react-spring/web";
 
 import { createExercise } from "@/modules/exercise";
 
-import { Time } from "@/components/Time";
 import { StepIndicator } from "@/components/StepIndicator";
 import { CircleAnimation } from "@/components/CircleAnimation";
+import { Close } from "@/components/Close";
 
 import { Pattern, Settings } from "@/config/types";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -96,51 +96,29 @@ export function Practice({
           <p>{t("complete")}</p>
         </animated.div>
         <animated.div style={contentStyle}>
-          <Time seconds={data.seconds} />
-          <div className="mt-10 mb-10">
+          <StepIndicator step={data.step} />
+          <div className="mt-20 mb-20">
             <CircleAnimation pattern={pattern} currentStep={data.step} />
           </div>
-          <StepIndicator step={data.step} />
         </animated.div>
       </div>
-      <div className="mt-20 flex justify-center">
-        <button
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-600 hover:opacity-50 dark:border-white dark:text-white"
-          title="Close"
-          onClick={() =>
-            containerSpring.start({
-              from: {
-                opacity: 1,
-                scale: 1,
-              },
-              to: {
-                opacity: 0,
-                scale: 1,
-              },
-              onResolve: () => onClose(),
-            })
-          }
-        >
-          {closeIcon}
-        </button>
-      </div>
+      <Close
+        seconds={data.seconds}
+        duration={seconds * 1000}
+        onClick={() =>
+          containerSpring.start({
+            from: {
+              opacity: 1,
+              scale: 1,
+            },
+            to: {
+              opacity: 0,
+              scale: 1,
+            },
+            onResolve: () => onClose(),
+          })
+        }
+      />
     </animated.div>
   );
 }
-
-const closeIcon = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth={1.5}
-    stroke="currentColor"
-    className="h-6 w-6"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M6 18L18 6M6 6l12 12"
-    />
-  </svg>
-);

@@ -7,7 +7,7 @@ export function StepIndicator(props: { step: number }) {
   const { t } = useTranslation();
 
   return (
-    <TextAnimated className="text-center dark:text-white">
+    <TextAnimated className="text-center text-2xl dark:text-white">
       {t(`steps.${STEPS[props.step]}`)}
     </TextAnimated>
   );
