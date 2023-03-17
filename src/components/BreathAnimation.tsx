@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { animated, useSpring } from "@react-spring/web";
 import { AnimationProps } from "@/config/types";
 
@@ -39,28 +38,22 @@ const CIRCLES = [
   },
 ];
 
-export function BreathAnimation({ currentStep, pattern }: AnimationProps) {
-  const [step, setStep] = useState("");
-
+export function BreathAnimation({
+  currentStep,
+  pattern,
+  state,
+}: AnimationProps) {
   const props = useSpring({
     from: {
       progress: 0,
     },
     to: {
-      progress: step === "inhale" ? 1 : 0,
+      progress: state === "inhaling" ? 1 : 0,
     },
     config: {
       duration: pattern[currentStep] * 1000,
     },
   });
-
-  useEffect(() => {
-    if (currentStep === 0 || currentStep === 1) {
-      setStep("inhale");
-    } else {
-      setStep("exhale");
-    }
-  }, [currentStep]);
 
   return (
     <div style={{ height: 200 }}>

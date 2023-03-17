@@ -27,4 +27,5 @@ export interface Option {
 export interface AnimationProps {
   pattern: Pattern;
   currentStep: number;
+  state: "idle" | "inhaling" | "exhaling";
 }
