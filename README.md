@@ -1,7 +1,12 @@
+<div align="center">
+  <img src="./public/logo.svg" width="120">
+
 # SereneBreath
 
 [![build](https://github.com/gsantiago/SereneBreath/actions/workflows/build.yml/badge.svg)](https://github.com/gsantiago/SereneBreath/actions/workflows/build.yml)
 ![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/gsantiago/SereneBreath)
+
+</div>
 
 [SereneBreath.com](https://serenebreath.com) is a small webapp to help you improve your breathing, relaxing and managing your stress.
 
