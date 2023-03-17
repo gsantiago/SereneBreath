@@ -73,8 +73,9 @@ export function BreathAnimation({ currentStep, pattern }: AnimationProps) {
           rotate: props.progress.to([0, 1], ["0deg", "360deg"]),
         }}
       >
-        {CIRCLES.map((c) => (
+        {CIRCLES.map((c, index) => (
           <animated.div
+            key={index}
             className="absolute rounded-full bg-sky-500 opacity-30"
             style={{
               width: SIZE,
