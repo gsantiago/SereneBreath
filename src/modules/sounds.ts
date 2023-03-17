@@ -4,6 +4,7 @@ import { translate, TranslationKey } from "@/modules/i18n";
 const loadedTracks: Record<string, HTMLAudioElement> = {};
 
 let lastPlayedStep = -1;
+let lastPlayedTrack: HTMLAudioElement;
 
 function loadTrack(file: string) {
   const url = `/audio/${file}`;
@@ -30,7 +31,15 @@ function playTrack(file: string) {
   const track = loadedTracks[file];
 
   if (track) {
+    stopLastPlayedTrack();
     track.play();
+    lastPlayedTrack = track;
+  }
+}
+
+function stopLastPlayedTrack() {
+  if (lastPlayedTrack) {
+    lastPlayedTrack.pause();
   }
 }
 
