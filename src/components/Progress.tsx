@@ -51,14 +51,19 @@ export function Progress({ onClose, duration, seconds }: ProgressProps) {
     },
   });
 
+  const opacity = useSpring({
+    from: {
+      opacity: 1,
+    },
+    to: {
+      opacity: seconds === 0 ? 0 : 1,
+    },
+  });
+
   return (
     <div className="relative flex flex-col items-center" style={{ width: 190 }}>
       <div>
-        <svg
-          width={WIDTH}
-          height={HEIGHT}
-          style={{ backgroundColor: "transparent" }}
-        >
+        <animated.svg width={WIDTH} height={HEIGHT} style={opacity}>
           <path className="stroke-sky-200 " {...pathProps} />
           <animated.path
             className="stroke-blue-600 dark:stroke-blue-600"
@@ -66,7 +71,7 @@ export function Progress({ onClose, duration, seconds }: ProgressProps) {
             strokeDasharray={dashArray}
             strokeDashoffset={props.progress}
           />
-        </svg>
+        </animated.svg>
         <div className="flex justify-center">
           <button
             className="absolute top-12 flex h-14 w-14 items-center justify-center rounded-full border border-gray-600  hover:opacity-50 dark:border-white dark:text-white"
@@ -77,10 +82,13 @@ export function Progress({ onClose, duration, seconds }: ProgressProps) {
           </button>
         </div>
       </div>
-      <div className="mt-2 flex w-full justify-between">
+      <animated.div
+        className="mt-2 flex w-full justify-between"
+        style={opacity}
+      >
         <Time seconds={seconds} />
         <Time seconds={duration / 1000 - seconds} />
-      </div>
+      </animated.div>
     </div>
   );
 }
