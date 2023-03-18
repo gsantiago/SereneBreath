@@ -1,5 +1,6 @@
 import { Settings } from "@/config/types";
 import { translate, TranslationKey } from "@/modules/i18n";
+import { getItem, subscribe } from "@/modules/storage";
 
 const loadedTracks: Record<string, HTMLAudioElement> = {};
 
@@ -61,3 +62,7 @@ export function playBell() {
 }
 
 loadTrack("bell.mp3");
+
+loadGuideTracks(getItem("guide"));
+
+subscribe("guide", loadGuideTracks);
