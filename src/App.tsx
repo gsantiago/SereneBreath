@@ -29,16 +29,20 @@ function App() {
 
   useThemeSupport();
 
+  const selectedTechnique =
+    techniques.find((p) => p.name === technique) ?? techniques[0];
+
   return (
     <Layout showHeaderAndFooter={showHeaderAndFooter}>
       {isActive && (
         <Countdown>
           {() => (
             <Practice
+              animation={selectedTechnique.animation}
               guide={guide}
               seconds={time * 60}
               vibrateOnStepChange={vibration}
-              pattern={techniques.find((p) => p.name === technique)!.pattern}
+              pattern={selectedTechnique.pattern}
               onClose={() => {
                 setShowHeaderAndFooter(true);
                 setIsActive(false);

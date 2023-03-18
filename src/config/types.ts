@@ -1,5 +1,6 @@
 import { LocaleKey } from "@/config/translations";
 import { techniques } from "@/config/techniques";
+import * as animations from "@/animations";
 
 export type Settings = {
   technique: (typeof techniques)[number]["name"];
@@ -17,6 +18,7 @@ export interface Technique {
   name: string;
   description: string;
   pattern: Pattern;
+  animation: keyof typeof animations;
 }
 
 export interface Option {

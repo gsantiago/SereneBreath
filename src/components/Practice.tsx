@@ -9,10 +9,11 @@ import { Progress } from "@/components/Progress";
 
 import * as animations from "@/animations";
 
-import { Pattern, Settings } from "@/config/types";
+import { Pattern, Settings, Technique } from "@/config/types";
 import { useTranslation } from "@/hooks/useTranslation";
 
 export interface PracticeProps {
+  animation: Technique["animation"];
   guide: Settings["guide"];
   vibrateOnStepChange: Settings["vibration"];
   pattern: Pattern;
@@ -21,6 +22,7 @@ export interface PracticeProps {
 }
 
 export function Practice({
+  animation,
   guide,
   vibrateOnStepChange,
   pattern,
@@ -101,7 +103,7 @@ export function Practice({
           <StepIndicator step={data.step} />
           <div className="my-20">
             <Animator
-              animation={animations.classic}
+              animation={animations[animation]}
               pattern={pattern}
               currentStep={data.step}
             />
