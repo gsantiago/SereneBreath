@@ -1,16 +1,15 @@
 import { animated, useSpring } from "@react-spring/web";
 import { AnimationProps } from "@/config/types";
+import { ClassicAnimation } from "./ClassicAnimation";
 
 const SIZE = 200;
-const BALL = 16;
+const BALL = 20;
 
 export function SquareAnimation({
   currentStep,
   pattern,
   state,
 }: AnimationProps) {
-  console.log({ currentStep });
-
   const propsX = useSpring({
     from: {
       progress: 0,
@@ -47,15 +46,21 @@ export function SquareAnimation({
       style={{ width: SIZE, height: SIZE }}
     >
       <animated.div
-        className="rounded-full bg-sky-600 shadow-sm shadow-white"
         style={{
-          width: BALL,
-          height: BALL,
           x,
           y,
-          scale: propsX.progress.to([0, 1], [1, 3]),
+          width: BALL,
+          height: BALL,
         }}
-      />
+      >
+        <ClassicAnimation
+          currentStep={currentStep}
+          pattern={pattern}
+          state={state}
+          size={BALL}
+          containerSize={BALL}
+        />
+      </animated.div>
     </div>
   );
 }
