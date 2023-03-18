@@ -7,7 +7,7 @@ import { StepIndicator } from "@/components/StepIndicator";
 import { CircleAnimation } from "@/components/CircleAnimation";
 import { BreathAnimation } from "@/components/BreathAnimation";
 import { Animator } from "@/components/Animator";
-import { Close } from "@/components/Close";
+import { Progress } from "@/components/Progress";
 
 import { Pattern, Settings } from "@/config/types";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -108,10 +108,10 @@ export function Practice({
           </div>
         </animated.div>
       </div>
-      <Close
+      <Progress
         seconds={data.seconds}
         duration={seconds * 1000}
-        onClick={() =>
+        onClose={() =>
           containerSpring.start({
             from: {
               opacity: 1,

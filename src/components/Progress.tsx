@@ -1,8 +1,8 @@
 import { useSpring, animated } from "@react-spring/web";
 import { Time } from "@/components/Time";
 
-export interface CloseProps {
-  onClick: () => void;
+export interface ProgressProps {
+  onClose: () => void;
   duration: number;
   seconds: number;
 }
@@ -38,7 +38,7 @@ const pathProps = {
   strokeLinecap: "round",
 } as const;
 
-export function Close({ onClick, duration, seconds }: CloseProps) {
+export function Progress({ onClose, duration, seconds }: ProgressProps) {
   const props = useSpring({
     from: {
       progress: dashArray,
@@ -71,7 +71,7 @@ export function Close({ onClick, duration, seconds }: CloseProps) {
           <button
             className="absolute top-12 flex h-14 w-14 items-center justify-center rounded-full border border-gray-600  hover:opacity-50 dark:border-white dark:text-white"
             title="Close"
-            onClick={onClick}
+            onClick={onClose}
           >
             {closeIcon}
           </button>
