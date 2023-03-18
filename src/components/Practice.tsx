@@ -4,10 +4,10 @@ import { animated, useSpring } from "@react-spring/web";
 import { createExercise } from "@/modules/exercise";
 
 import { StepIndicator } from "@/components/StepIndicator";
-import { CircleAnimation } from "@/components/CircleAnimation";
-import { BreathAnimation } from "@/components/BreathAnimation";
 import { Animator } from "@/components/Animator";
 import { Progress } from "@/components/Progress";
+
+import * as animations from "@/animations";
 
 import { Pattern, Settings } from "@/config/types";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -101,7 +101,7 @@ export function Practice({
           <StepIndicator step={data.step} />
           <div className="my-20">
             <Animator
-              animation={BreathAnimation}
+              animation={animations.classic}
               pattern={pattern}
               currentStep={data.step}
             />

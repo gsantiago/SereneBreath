@@ -38,7 +38,7 @@ const CIRCLES = [
   },
 ];
 
-export function BreathAnimation({
+export function ClassicAnimation({
   currentStep,
   pattern,
   state,
