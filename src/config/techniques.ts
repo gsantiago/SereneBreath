@@ -12,7 +12,7 @@ export const techniques = [
   {
     name: "deepCalm",
     pattern: [4, 7, 8, 0],
-    animation: "classic",
+    animation: "ring",
   },
   {
     name: "pranayama",
