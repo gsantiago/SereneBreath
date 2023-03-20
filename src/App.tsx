@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useSpring } from "@react-spring/web";
+import { animated, useSpring } from "@react-spring/web";
 
 import { Layout } from "@/components/Layout";
 import { Countdown } from "@/components/Countdown";
@@ -60,10 +60,13 @@ function App() {
         </Countdown>
       )}
 
-      <div className="relative flex w-full justify-center">
-        <Cards />
+      {!isActive && (
+        <animated.div
+          className="relative flex w-full justify-center"
+          style={startStyle}
+        >
+          <Cards />
 
-        {!isActive && (
           <div className="absolute text-center" style={{ bottom: -84 }}>
             <Start
               onClick={() => {
@@ -77,11 +80,10 @@ function App() {
                   onResolve: () => setIsActive(true),
                 });
               }}
-              style={startStyle}
             />
           </div>
-        )}
-      </div>
+        </animated.div>
+      )}
     </Layout>
   );
 }

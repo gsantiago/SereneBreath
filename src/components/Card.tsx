@@ -1,5 +1,6 @@
 import { RingAnimation } from "@/animations/RingAnimation";
 import { Animator } from "@/components/Animator";
+import { Pattern } from "@/config/types";
 
 export const WIDTH = 250;
 const HEIGHT = "100%";
@@ -7,9 +8,10 @@ const HEIGHT = "100%";
 export interface CardProps {
   title: string;
   description: string;
+  pattern: Pattern;
 }
 
-export function Card({ title, description }: CardProps) {
+export function Card({ title, description, pattern }: CardProps) {
   return (
     <section
       className="overflow-hidden rounded-lg bg-white"
@@ -26,7 +28,8 @@ export function Card({ title, description }: CardProps) {
       </div>
       <div className="p-5">
         <h1 className="text-2xl font-bold">{title}</h1>
-        <p className="mt-3 text-gray-800">{description}</p>
+        <p className="my-1 text-xs text-gray-400">{pattern.join("-")}</p>
+        <p className="text-gray-800">{description}</p>
       </div>
     </section>
   );

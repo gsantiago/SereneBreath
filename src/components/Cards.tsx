@@ -3,15 +3,22 @@ import { animated, useSpring } from "@react-spring/web";
 import { useGesture } from "@use-gesture/react";
 
 import { Card, WIDTH as CARD_WIDTH } from "@/components/Card";
+
 import { useTranslation } from "@/hooks/useTranslation";
+import { useStorage } from "@/hooks/useStorage";
+
 import { techniques } from "@/config/techniques";
 
 const items = techniques;
+const center = Math.ceil(items.length / 2) - 1;
+
+const getX = (index: number) => (index - center) * -CARD_WIDTH;
 
 export function Cards() {
-  const center = Math.ceil(items.length / 2);
-  const [active, setActive] = useState(center);
-  const [context, setContext] = useState({ x: 0 });
+  const [technique, setTechnique] = useStorage("technique");
+  const active = techniques.findIndex((t) => t.name === technique);
+
+  const [context, setContext] = useState({ x: getX(active) });
 
   const { t } = useTranslation();
 
@@ -19,7 +26,7 @@ export function Cards() {
   const TRESHOLD = 10;
 
   const [trackStyles, trackSpring] = useSpring(() => ({
-    x: 0,
+    x: context.x,
   }));
 
   const bind = useGesture({
@@ -35,13 +42,13 @@ export function Cards() {
 
       // LEFT
       if (mx > TRESHOLD) {
-        if (active > 1) {
-          const newX = (active - 1 - center) * -CARD_WIDTH;
+        if (active > 0) {
+          const newX = getX(active - 1);
           trackSpring.start({
             x: newX,
           });
 
-          setActive(active - 1);
+          setTechnique(techniques[active - 1].name);
 
           return setContext({ x: newX });
         }
@@ -49,13 +56,13 @@ export function Cards() {
 
       // RIGHT
       if (mx < -TRESHOLD) {
-        if (active < items.length) {
-          const newX = (active + 1 - center) * -CARD_WIDTH;
+        if (active < items.length - 1) {
+          const newX = getX(active + 1);
           trackSpring.start({
             x: newX,
           });
 
-          setActive(active + 1);
+          setTechnique(techniques[active + 1].name);
 
           return setContext({ x: newX });
         }
@@ -68,7 +75,10 @@ export function Cards() {
   });
 
   return (
-    <div className="relative mb-10 overflow-hidden" style={{ width: "100%" }}>
+    <div
+      className="relative mb-10 select-none overflow-hidden"
+      style={{ width: "100%" }}
+    >
       <animated.div
         {...bind()}
         className="relative flex w-full cursor-grab touch-none justify-center active:cursor-grabbing"
@@ -80,16 +90,16 @@ export function Cards() {
           return (
             <div
               key={index}
-              className=""
               style={{
-                transform: active === index + 1 ? "scale(1)" : "scale(0.9)",
-                opacity: active === index + 1 ? "1" : "0.5",
+                transform: active === index ? "scale(1)" : "scale(0.9)",
+                opacity: active === index ? "1" : "0.5",
                 transition: "all 0.2s ease",
               }}
             >
               <Card
                 title={t(`techniques.${item.name}.title`)}
                 description={t(`techniques.${item.name}.description`)}
+                pattern={item.pattern}
               />
             </div>
           );
