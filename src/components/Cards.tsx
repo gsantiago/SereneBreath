@@ -71,12 +71,12 @@ export function Cards() {
 
   return (
     <div
-      className="relative mb-10 select-none overflow-hidden"
+      className="relative select-none overflow-hidden"
       style={{ width: "100%" }}
     >
       <animated.div
         {...bind()}
-        className="relative flex w-full cursor-grab touch-none justify-center active:cursor-grabbing"
+        className="relative flex w-full cursor-grab touch-none justify-center pb-12 active:cursor-grabbing"
         style={{
           x: trackStyles.x,
         }}

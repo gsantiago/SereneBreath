@@ -27,9 +27,9 @@ export function Card({ title, description, pattern }: CardProps) {
         </div>
       </div>
       <div className="p-5">
-        <h1 className="text-2xl font-bold">{title}</h1>
+        <h1 className="text-xl font-bold sm:text-2xl">{title}</h1>
         <p className="my-1 text-xs text-gray-400">{pattern.join("-")}</p>
-        <p className="text-gray-800">{description}</p>
+        <p className="text-sm text-gray-800 sm:text-base">{description}</p>
       </div>
     </section>
   );

@@ -61,13 +61,10 @@ function App() {
       )}
 
       {!isActive && (
-        <animated.div
-          className="relative flex w-full justify-center"
-          style={startStyle}
-        >
+        <animated.div className="flex w-full justify-center" style={startStyle}>
           <Cards />
 
-          <div className="absolute text-center" style={{ bottom: -84 }}>
+          <div className="absolute" style={{ bottom: 20 }}>
             <Start
               onClick={() => {
                 setShowHeaderAndFooter(false);

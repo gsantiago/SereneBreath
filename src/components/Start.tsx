@@ -11,7 +11,7 @@ export function Start(props: StartProps) {
     <button
       autoFocus
       type="button"
-      className="mb-20 flex h-24 w-24 items-center justify-center rounded-full bg-blue-600 p-0 text-4xl font-semibold text-white  shadow-xl hover:bg-blue-700 focus:outline-sky-500 md:mb-0"
+      className="flex h-24 w-24 items-center justify-center rounded-full bg-blue-600 p-0 text-4xl font-semibold text-white  shadow-xl hover:bg-blue-700 focus:outline-sky-500"
       title={t("start")}
       {...props}
     >
