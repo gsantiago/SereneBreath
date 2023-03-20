@@ -1,4 +1,5 @@
 import { Select } from "@/components/Select";
+import { Field } from "@/components/Field";
 
 import { useStorage } from "@/hooks/useStorage";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -15,16 +16,17 @@ export function LanguageSelect() {
   const [locale, setLocale] = useStorage("locale");
 
   return (
-    <div>
-      <label htmlFor="locale" className="sr-only">
-        {t("footer.language")}
-      </label>
-      <Select<LocaleKey>
-        id="locale"
-        value={locale}
-        onChange={setLocale}
-        options={options}
-      />
-    </div>
+    <Field
+      id="locale"
+      label={t("footer.language")}
+      bottom={
+        <Select<LocaleKey>
+          id="locale"
+          value={locale}
+          onChange={setLocale}
+          options={options}
+        />
+      }
+    />
   );
 }

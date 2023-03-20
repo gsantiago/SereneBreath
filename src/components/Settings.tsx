@@ -4,7 +4,7 @@ import { RadioGroup } from "@/components/RadioGroup";
 import { Switch } from "@/components/Switch";
 import { Toggle } from "@/components/Toggle";
 import { Popover } from "@/components/Popover";
-import { TechniqueSelect } from "@/components/TechniqueSelect";
+import { LanguageSelect } from "@/components/LanguageSelect";
 
 import { useStorage } from "@/hooks/useStorage";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -27,7 +27,6 @@ export function Settings({ isVisible }: SettingsProps) {
 
   return (
     <Popover isVisible={isVisible}>
-      <TechniqueSelect />
       <Field
         id="time"
         label={t("settings.time.title")}
@@ -100,6 +99,7 @@ export function Settings({ isVisible }: SettingsProps) {
           />
         }
       />
+      <LanguageSelect />
     </Popover>
   );
 }
