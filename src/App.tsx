@@ -5,6 +5,7 @@ import { Layout } from "@/components/Layout";
 import { Countdown } from "@/components/Countdown";
 import { Practice } from "@/components/Practice";
 import { Start } from "@/components/Start";
+import { Cards } from "@/components/Cards";
 
 import { useStorage } from "@/hooks/useStorage";
 import { useThemeSupport } from "@/hooks/useThemeSupport";
@@ -59,22 +60,28 @@ function App() {
         </Countdown>
       )}
 
-      {!isActive && (
-        <Start
-          onClick={() => {
-            setShowHeaderAndFooter(false);
+      <div className="relative flex w-full justify-center">
+        <Cards />
 
-            startSpring.start({
-              to: {
-                opacity: 0,
-                scale: 0.3,
-              },
-              onResolve: () => setIsActive(true),
-            });
-          }}
-          style={startStyle}
-        />
-      )}
+        {!isActive && (
+          <div className="absolute text-center" style={{ bottom: -84 }}>
+            <Start
+              onClick={() => {
+                setShowHeaderAndFooter(false);
+
+                startSpring.start({
+                  to: {
+                    opacity: 0,
+                    scale: 0.3,
+                  },
+                  onResolve: () => setIsActive(true),
+                });
+              }}
+              style={startStyle}
+            />
+          </div>
+        )}
+      </div>
     </Layout>
   );
 }
