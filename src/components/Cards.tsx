@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { animated, useSpring } from "@react-spring/web";
 import { useGesture } from "@use-gesture/react";
 
@@ -18,23 +17,37 @@ export function Cards() {
   const [technique, setTechnique] = useStorage("technique");
   const active = techniques.findIndex((t) => t.name === technique);
 
-  const [context, setContext] = useState({ x: getX(active) });
-
   const { t } = useTranslation();
 
   const TOTAL_SIZE = CARD_WIDTH * items.length;
   const TRESHOLD = 10;
 
   const [trackStyles, trackSpring] = useSpring(() => ({
-    x: context.x,
+    x: getX(active),
   }));
+
+  const selectIndex = (index: number) => {
+    if (index >= 0 && index < items.length) {
+      const newX = getX(index);
+
+      trackSpring.start({
+        x: newX,
+      });
+
+      setTechnique(techniques[index].name);
+    } else {
+      trackSpring.start({
+        x: getX(active),
+      });
+    }
+  };
 
   const bind = useGesture({
     onDrag: (state) => {
       const [mx] = state.movement;
 
       trackSpring.start({
-        x: context.x + mx,
+        x: getX(active) + mx,
       });
     },
     onDragEnd: (state) => {
@@ -42,34 +55,16 @@ export function Cards() {
 
       // LEFT
       if (mx > TRESHOLD) {
-        if (active > 0) {
-          const newX = getX(active - 1);
-          trackSpring.start({
-            x: newX,
-          });
-
-          setTechnique(techniques[active - 1].name);
-
-          return setContext({ x: newX });
-        }
+        return selectIndex(active - 1);
       }
 
       // RIGHT
       if (mx < -TRESHOLD) {
-        if (active < items.length - 1) {
-          const newX = getX(active + 1);
-          trackSpring.start({
-            x: newX,
-          });
-
-          setTechnique(techniques[active + 1].name);
-
-          return setContext({ x: newX });
-        }
+        return selectIndex(active + 1);
       }
 
       trackSpring.start({
-        x: context.x,
+        x: getX(active),
       });
     },
   });
