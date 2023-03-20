@@ -20,7 +20,7 @@ export function Cards() {
   const { t } = useTranslation();
 
   const TOTAL_SIZE = CARD_WIDTH * items.length;
-  const TRESHOLD = 10;
+  const TRESHOLD = CARD_WIDTH / 3;
 
   const [trackStyles, trackSpring] = useSpring(() => ({
     x: getX(active),
@@ -82,19 +82,20 @@ export function Cards() {
         }}
       >
         {items.map((item, index) => {
+          const isActive = index === active;
+
           return (
             <div
               key={index}
-              style={{
-                transform: active === index ? "scale(1)" : "scale(0.9)",
-                opacity: active === index ? "1" : "0.5",
-                transition: "all 0.2s ease",
-              }}
+              className={`transition-all duration-200 ${
+                isActive ? "" : "scale-90 opacity-50"
+              }`}
             >
               <Card
                 title={t(`techniques.${item.name}.title`)}
                 description={t(`techniques.${item.name}.description`)}
                 pattern={item.pattern}
+                isActive={isActive}
               />
             </div>
           );

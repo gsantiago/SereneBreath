@@ -9,12 +9,15 @@ export interface CardProps {
   title: string;
   description: string;
   pattern: Pattern;
+  isActive: boolean;
 }
 
-export function Card({ title, description, pattern }: CardProps) {
+export function Card({ title, description, pattern, isActive }: CardProps) {
   return (
     <section
-      className="overflow-hidden rounded-lg bg-white"
+      className={`overflow-hidden rounded-lg bg-white ${
+        isActive && "shadow dark:shadow-gray-500"
+      }`}
       style={{ width: WIDTH, height: HEIGHT, paddingBottom: 45 }}
     >
       <div className="flex h-1/2 w-full items-center justify-center bg-orange-100">
