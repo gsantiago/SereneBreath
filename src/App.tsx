@@ -51,7 +51,6 @@ function App() {
                 startSpring.start({
                   to: {
                     opacity: 1,
-                    scale: 1,
                   },
                 });
               }}
@@ -61,10 +60,13 @@ function App() {
       )}
 
       {!isActive && (
-        <animated.div className="flex w-full justify-center" style={startStyle}>
+        <animated.div
+          className="relative flex w-full justify-center"
+          style={startStyle}
+        >
           <Cards />
 
-          <div className="absolute" style={{ bottom: 20 }}>
+          <div className="absolute bottom-0">
             <Start
               onClick={() => {
                 setShowHeaderAndFooter(false);
@@ -72,7 +74,6 @@ function App() {
                 startSpring.start({
                   to: {
                     opacity: 0,
-                    scale: 0.3,
                   },
                   onResolve: () => setIsActive(true),
                 });
