@@ -14,12 +14,7 @@ export type Settings = {
 // inhale, hold, exhale, hold
 export type Pattern = readonly [number, number, number, number];
 
-export interface Technique {
-  name: string;
-  description: string;
-  pattern: Pattern;
-  animation: keyof typeof animations;
-}
+export type Technique = (typeof techniques)[number];
 
 export interface Option {
   label: string;
