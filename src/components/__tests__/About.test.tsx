@@ -1,7 +1,7 @@
 import { render, axe } from "@/test-utils";
 import { About } from "@/components/About";
 
-const setup = () => render(<About isVisible />);
+const setup = () => render(<About />);
 
 test("renders successfuly", () => {
   const { container } = setup();

@@ -30,7 +30,6 @@ export function Footer({ isVisible, showAbout, onToggleAbout }: FooterProps) {
       >
         {infoIcon}
       </ButtonIcon>
-      <About isVisible={showAbout} />
     </footer>
   );
 }

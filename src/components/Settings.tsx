@@ -5,6 +5,7 @@ import { Switch } from "@/components/Switch";
 import { Toggle } from "@/components/Toggle";
 import { Popover } from "@/components/Popover";
 import { LanguageSelect } from "@/components/LanguageSelect";
+import { About } from "@/components/About";
 
 import { useStorage } from "@/hooks/useStorage";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -100,6 +101,7 @@ export function Settings({ isVisible }: SettingsProps) {
         }
       />
       <LanguageSelect />
+      <About />
     </Popover>
   );
 }
