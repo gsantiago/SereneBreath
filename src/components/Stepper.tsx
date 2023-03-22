@@ -17,7 +17,7 @@ export function Stepper({
   const { t } = useTranslation();
 
   return (
-    <div className="inline-flex items-center">
+    <div className="flex items-center justify-between px-8">
       <Control
         title={t("stepper.decrease")}
         onClick={() => {
@@ -28,7 +28,7 @@ export function Stepper({
       >
         {minusIcon}
       </Control>
-      <p className="mx-2 w-4 text-center text-sm dark:text-white">{value}</p>
+      <p className="text-center">{value} min</p>
       <Control
         title={t("stepper.increase")}
         onClick={() => {
@@ -46,7 +46,7 @@ export function Stepper({
 const Control = (props: React.ComponentProps<"button">) => (
   <button
     type="button"
-    className="flex h-6 w-6 items-center justify-center rounded-md bg-blue-600 text-white hover:bg-blue-700"
+    className="flex h-8 w-8 items-center justify-center rounded-full  bg-blue-600 text-white"
     {...props}
   />
 );

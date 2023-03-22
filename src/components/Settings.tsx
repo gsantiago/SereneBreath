@@ -21,20 +21,12 @@ export interface SettingsProps {
 export function Settings({ isVisible }: SettingsProps) {
   const { t } = useTranslation();
 
-  const [time, setTime] = useStorage("time");
   const [vibration, setVibration] = useStorage("vibration");
   const [guide, setGuide] = useStorage("guide");
   const [theme, setTheme] = useStorage("theme");
 
   return (
     <Popover isVisible={isVisible}>
-      <Field
-        id="time"
-        label={t("settings.time.title")}
-        description={t("settings.time.description")}
-      >
-        <Stepper min={1} value={time} onChange={setTime} />
-      </Field>
       {canVibrate && (
         <Field
           id="vibration"
