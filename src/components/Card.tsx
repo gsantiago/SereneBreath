@@ -1,5 +1,3 @@
-import { RingAnimation } from "@/animations/RingAnimation";
-import { Animator } from "@/components/Animator";
 import { Pattern } from "@/config/types";
 
 export const WIDTH = 250;
@@ -15,25 +13,17 @@ export interface CardProps {
 export function Card({ title, description, pattern, isActive }: CardProps) {
   return (
     <section
-      className={`overflow-hidden rounded-lg bg-white ${
+      className={`overflow-hidden rounded-lg bg-white p-5 ${
         isActive && "shadow dark:shadow-gray-500"
       }`}
-      style={{ width: WIDTH, height: HEIGHT, paddingBottom: 45 }}
+      style={{ width: WIDTH, height: HEIGHT, paddingBottom: 75 }}
     >
-      <div className="flex h-1/2 w-full items-center justify-center bg-orange-100">
-        <div style={{ transform: "scale(0.8)" }}>
-          <Animator
-            currentStep={3}
-            pattern={[2, 2, 2, 2]}
-            animation={RingAnimation}
-          />
-        </div>
+      <div className="mb-5 flex w-full items-center justify-center">
+        <img src="/logo.svg" width={100} />
       </div>
-      <div className="p-5">
-        <h1 className="text-xl font-bold sm:text-2xl">{title}</h1>
-        <p className="my-1 text-xs text-gray-400">{pattern.join("-")}</p>
-        <p className="text-sm text-gray-800 sm:text-base">{description}</p>
-      </div>
+      <h1 className="font-bold sm:text-xl">{title}</h1>
+      <p className="my-1 text-xs text-gray-400">{pattern.join("-")}</p>
+      <p className="text-sm text-gray-800 sm:text-base">{description}</p>
     </section>
   );
 }
