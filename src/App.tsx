@@ -51,6 +51,7 @@ function App() {
                 startSpring.start({
                   to: {
                     opacity: 1,
+                    scale: 1,
                   },
                 });
               }}
@@ -74,6 +75,7 @@ function App() {
                 startSpring.start({
                   to: {
                     opacity: 0,
+                    scale: 0.9,
                   },
                   onResolve: () => setIsActive(true),
                 });
