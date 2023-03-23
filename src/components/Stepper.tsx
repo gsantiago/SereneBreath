@@ -46,7 +46,7 @@ export function Stepper({
 const Control = (props: React.ComponentProps<"button">) => (
   <button
     type="button"
-    className="flex h-8 w-8 items-center justify-center rounded-full  bg-blue-600 text-white"
+    className="flex h-8 w-8 items-center justify-center rounded-full  bg-blue-600 text-white hover:bg-blue-700"
     {...props}
   />
 );
