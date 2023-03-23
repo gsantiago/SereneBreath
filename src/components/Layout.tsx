@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 
 export interface LayoutProps {
   showHeaderAndFooter: boolean;
@@ -28,16 +27,6 @@ export function Layout({ showHeaderAndFooter, children }: LayoutProps) {
         <div className="flex h-full w-full items-end justify-center pb-5 md:items-center">
           {children}
         </div>
-        {/* <div className="w-full max-w-5xl p-5">
-          <Footer
-            isVisible={showHeaderAndFooter}
-            showAbout={showAbout}
-            onToggleAbout={() => {
-              setShowAbout((show) => !show);
-              setShowSettings(false);
-            }}
-          />
-        </div> */}
       </div>
       {(showSettings || showAbout) && (
         <div

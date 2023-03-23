@@ -2,28 +2,45 @@
 
 exports[`renders successfuly 1`] = `
 <div>
-  <div>
-    <label
-      class="sr-only"
-      for="locale"
+  <div
+    class="px-5 py-2"
+  >
+    <div
+      class="grid grid-cols-6 items-end"
     >
-      Language
-    </label>
-    <select
-      class="w-full cursor-pointer rounded-md border-gray-300 text-sm dark:text-gray-700"
-      id="locale"
+      <div
+        class="col-span-4"
+      >
+        <label
+          class="text-sm font-medium text-gray-800 dark:text-white"
+          for="locale"
+        >
+          Language
+        </label>
+      </div>
+      <div
+        class="col-span-2 text-right"
+      />
+    </div>
+    <div
+      class="mt-2"
     >
-      <option
-        value="en"
+      <select
+        class="w-full cursor-pointer rounded-md border-gray-300 text-sm dark:text-gray-700"
+        id="locale"
       >
-        English
-      </option>
-      <option
-        value="pt"
-      >
-        Português
-      </option>
-    </select>
+        <option
+          value="en"
+        >
+          English
+        </option>
+        <option
+          value="pt"
+        >
+          Português
+        </option>
+      </select>
+    </div>
   </div>
 </div>
 `;

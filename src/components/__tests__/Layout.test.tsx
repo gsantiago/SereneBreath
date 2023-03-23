@@ -22,5 +22,4 @@ test("does not show header and footer", () => {
   setup({ showHeaderAndFooter: false });
 
   expect(screen.getByTestId("header")).not.toBeVisible();
-  expect(screen.getByTestId("footer")).toHaveClass("opacity-0");
 });

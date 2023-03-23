@@ -16,129 +16,6 @@ exports[`renders successfuly 1`] = `
         >
           <label
             class="text-sm font-medium text-gray-800 dark:text-white"
-            for="technique"
-          >
-            Technique
-          </label>
-        </div>
-        <div
-          class="col-span-2 text-right"
-        />
-      </div>
-      <div
-        class="mt-2"
-      >
-        <select
-          class="w-full cursor-pointer rounded-md border-gray-300 text-sm dark:text-gray-700"
-          id="technique"
-        >
-          <option
-            value="awake"
-          >
-            Awake (6-0-2-0)
-          </option>
-          <option
-            value="square"
-          >
-            Square (4-4-4-4)
-          </option>
-          <option
-            value="deepCalm"
-          >
-            Deep Calm (4-7-8-0)
-          </option>
-          <option
-            value="pranayama"
-          >
-            Pranayama (7-4-8-4)
-          </option>
-          <option
-            value="ujjayi"
-          >
-            Ujjayi (7-0-7-0)
-          </option>
-        </select>
-      </div>
-    </div>
-    <div
-      class="px-5 py-2"
-    >
-      <div
-        class="grid grid-cols-6 items-end"
-      >
-        <div
-          class="col-span-4"
-        >
-          <label
-            class="text-sm font-medium text-gray-800 dark:text-white"
-            for="time"
-          >
-            Time
-          </label>
-          <p
-            class="text-xs text-gray-500 dark:text-gray-400"
-          >
-            Exercise time in minutes
-          </p>
-        </div>
-        <div
-          class="col-span-2 text-right"
-        >
-          <div
-            class="inline-flex items-center"
-          >
-            <button
-              class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-600 text-white hover:bg-blue-700"
-              title="Decrease"
-              type="button"
-            >
-              <svg
-                class="h-5 w-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.75 9.25a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5z"
-                />
-              </svg>
-            </button>
-            <p
-              class="mx-2 w-4 text-center text-sm dark:text-white"
-            >
-              1
-            </p>
-            <button
-              class="flex h-6 w-6 items-center justify-center rounded-md bg-blue-600 text-white hover:bg-blue-700"
-              title="Increase"
-              type="button"
-            >
-              <svg
-                class="h-5 w-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10.75 6.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="px-5 py-2"
-    >
-      <div
-        class="grid grid-cols-6 items-end"
-      >
-        <div
-          class="col-span-4"
-        >
-          <label
-            class="text-sm font-medium text-gray-800 dark:text-white"
             for="guide"
           >
             Guide Breath
@@ -286,6 +163,91 @@ exports[`renders successfuly 1`] = `
             Light
           </label>
         </div>
+      </div>
+    </div>
+    <div
+      class="px-5 py-2"
+    >
+      <div
+        class="grid grid-cols-6 items-end"
+      >
+        <div
+          class="col-span-4"
+        >
+          <label
+            class="text-sm font-medium text-gray-800 dark:text-white"
+            for="locale"
+          >
+            Language
+          </label>
+        </div>
+        <div
+          class="col-span-2 text-right"
+        />
+      </div>
+      <div
+        class="mt-2"
+      >
+        <select
+          class="w-full cursor-pointer rounded-md border-gray-300 text-sm dark:text-gray-700"
+          id="locale"
+        >
+          <option
+            value="en"
+          >
+            English
+          </option>
+          <option
+            value="pt"
+          >
+            Português
+          </option>
+        </select>
+      </div>
+    </div>
+    <div
+      class="px-5 py-1 dark:text-white"
+    >
+      <p
+        class="mt-2 text-xs"
+      >
+        SereneBreath.com is a small webapp to help you improve your breathing, relaxing and managing your stress.
+      </p>
+      <p
+        class="mt-2 text-xs"
+      >
+        This project is open source and open for new contributions. Check out its repo for more info:
+         
+        <a
+          class="text-blue-600 underline dark:text-sky-300"
+          href="https://github.com/gsantiago/SereneBreath"
+          target="_blank"
+        >
+          Github Repo.
+        </a>
+      </p>
+      <p
+        class="mt-2 text-xs"
+      >
+        English and bell audio files are from the great Breathly app, which also inspired this app.
+         
+        <a
+          class="text-blue-600 underline dark:text-sky-300"
+          href="https://breathly.app/"
+          target="_blank"
+        >
+          Breathly Site.
+        </a>
+      </p>
+      <div
+        class="mt-5 text-center"
+      >
+        <small
+          class="text-xs text-gray-400"
+        >
+          v
+          0.0.1
+        </small>
       </div>
     </div>
   </div>
