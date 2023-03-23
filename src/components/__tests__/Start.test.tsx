@@ -18,7 +18,7 @@ test("accessibility", async () => {
 test("click", () => {
   setup();
 
-  const button = screen.getByText("Start");
+  const button = screen.getByTitle("Start");
   fireEvent.click(button);
 
   expect(handlers.onClick).toHaveBeenCalled();
