@@ -17,7 +17,7 @@ export function Stepper({
   const { t } = useTranslation();
 
   return (
-    <div className="flex items-center justify-between px-8">
+    <div className="flex items-center justify-between">
       <Control
         title={t("stepper.decrease")}
         onClick={() => {

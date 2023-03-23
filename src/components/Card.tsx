@@ -32,7 +32,7 @@ export function Card({ title, description, pattern, isActive }: CardProps) {
       </div>
       <div
         className={`mt-5 ${
-          isActive ? "opacity-100" : "opacity-0"
+          isActive ? "px-8 opacity-100" : "px-4 opacity-0"
         } transition-all duration-500`}
       >
         <Stepper min={1} value={time} onChange={setTime} />
