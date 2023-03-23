@@ -46,32 +46,39 @@ export function Carousel<Item>({
     }
   };
 
-  const bind = useGesture({
-    onDrag: (state) => {
-      const [mx] = state.movement;
+  const bind = useGesture(
+    {
+      onDrag: (state) => {
+        const [mx] = state.movement;
 
-      trackSpring.start({
-        x: getX(activeIndex) + mx,
-      });
+        trackSpring.start({
+          x: getX(activeIndex) + mx,
+        });
+      },
+      onDragEnd: (state) => {
+        const [mx] = state.movement;
+
+        // LEFT
+        if (mx > threshold) {
+          return selectIndex(activeIndex - 1);
+        }
+
+        // RIGHT
+        if (mx < -threshold) {
+          return selectIndex(activeIndex + 1);
+        }
+
+        trackSpring.start({
+          x: getX(activeIndex),
+        });
+      },
     },
-    onDragEnd: (state) => {
-      const [mx] = state.movement;
-
-      // LEFT
-      if (mx > threshold) {
-        return selectIndex(activeIndex - 1);
-      }
-
-      // RIGHT
-      if (mx < -threshold) {
-        return selectIndex(activeIndex + 1);
-      }
-
-      trackSpring.start({
-        x: getX(activeIndex),
-      });
-    },
-  });
+    {
+      drag: {
+        filterTaps: true,
+      },
+    }
+  );
 
   return (
     <div
@@ -94,6 +101,7 @@ export function Carousel<Item>({
               className={`transition-all duration-200 ${
                 isActive ? "" : "scale-90 opacity-50"
               }`}
+              onClick={() => selectIndex(index)}
             >
               {renderItem({
                 item,
