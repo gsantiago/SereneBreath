@@ -24,7 +24,7 @@ export function Card({ title, description, pattern, isActive }: CardProps) {
     >
       <div>
         <div className="mb-5 flex w-full items-center justify-center">
-          <img src="/logo.svg" width={100} />
+          <img src="/logo.svg" width={100} alt="" draggable="false" />
         </div>
         <h1 className="font-bold sm:text-xl">{title}</h1>
         <p className="my-1 text-xs text-gray-400">{pattern.join("-")}</p>
