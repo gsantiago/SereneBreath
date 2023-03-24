@@ -81,10 +81,7 @@ export function Carousel<Item>({
   );
 
   return (
-    <div
-      className="relative select-none overflow-hidden"
-      style={{ width: "100%" }}
-    >
+    <div className="relative select-none" style={{ width: "100%" }}>
       <animated.div
         {...bind()}
         className="relative flex w-full cursor-grab touch-none justify-center pb-12 active:cursor-grabbing"
