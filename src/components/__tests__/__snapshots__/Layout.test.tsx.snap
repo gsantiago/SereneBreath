@@ -302,7 +302,7 @@ exports[`renders successfuly 1`] = `
         </div>
       </header>
       <div
-        class="flex h-full w-full items-end justify-center pb-5 md:items-center"
+        class="flex h-full w-full items-end justify-center md:items-center"
       >
         content
       </div>

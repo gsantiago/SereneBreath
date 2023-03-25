@@ -9,8 +9,9 @@ import { Progress } from "@/components/Progress";
 
 import * as animations from "@/animations";
 
-import { Pattern, Settings, Technique } from "@/config/types";
 import { useTranslation } from "@/hooks/useTranslation";
+
+import { Pattern, Settings, Technique } from "@/config/types";
 
 export interface PracticeProps {
   animation: Technique["animation"];
@@ -88,20 +89,22 @@ export function Practice({
   }, []);
 
   return (
-    <animated.div
-      className="flex h-full w-full flex-col items-center justify-center"
-      style={containerStyle}
-    >
-      <div className="relative">
-        <animated.div
-          className="absolute flex h-full w-full items-center justify-center text-3xl font-bold dark:text-white"
-          style={completeStyle}
-        >
-          <p>{t("complete")}</p>
-        </animated.div>
+    <div className="relative h-full w-full">
+      <animated.div
+        className="absolute flex h-full w-full items-center justify-center text-3xl font-bold dark:text-white"
+        style={completeStyle}
+      >
+        <p>{t("complete")}</p>
+      </animated.div>
+      <animated.div
+        className="flex h-full w-full flex-col items-center justify-between pt-10 pb-10 md:pt-28 md:pb-28 lg:pt-40 lg:pb-40"
+        style={containerStyle}
+      >
         <animated.div style={contentStyle}>
           <StepIndicator step={data.step} />
-          <div className="my-20">
+        </animated.div>
+        <animated.div style={contentStyle}>
+          <div className="">
             <Animator
               animation={animations[animation]}
               pattern={pattern}
@@ -109,24 +112,24 @@ export function Practice({
             />
           </div>
         </animated.div>
-      </div>
-      <Progress
-        seconds={data.seconds}
-        duration={seconds * 1000}
-        onClose={() =>
-          containerSpring.start({
-            from: {
-              opacity: 1,
-              scale: 1,
-            },
-            to: {
-              opacity: 0,
-              scale: 1,
-            },
-            onResolve: () => onClose(),
-          })
-        }
-      />
-    </animated.div>
+        <Progress
+          seconds={data.seconds}
+          duration={seconds * 1000}
+          onClose={() =>
+            containerSpring.start({
+              from: {
+                opacity: 1,
+                scale: 1,
+              },
+              to: {
+                opacity: 0,
+                scale: 1,
+              },
+              onResolve: () => onClose(),
+            })
+          }
+        />
+      </animated.div>
+    </div>
   );
 }

@@ -20,7 +20,7 @@ export function Layout({ showHeader, children }: LayoutProps) {
             setShowSettings((show) => !show);
           }}
         />
-        <div className="flex h-full w-full items-end justify-center pb-5 md:items-center">
+        <div className="flex h-full w-full items-end justify-center md:items-center">
           {children}
         </div>
       </div>

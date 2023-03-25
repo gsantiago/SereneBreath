@@ -62,7 +62,7 @@ function App() {
 
       {!isActive && (
         <animated.div
-          className="relative flex w-full justify-center pt-20"
+          className="relative mb-5 flex w-full justify-center pt-20"
           style={startStyle}
         >
           <Cards />
