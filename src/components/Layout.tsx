@@ -9,7 +9,6 @@ export interface LayoutProps {
 
 export function Layout({ showHeader, children }: LayoutProps) {
   const [showSettings, setShowSettings] = useState(false);
-  const [showAbout, setShowAbout] = useState(false);
 
   return (
     <div className="h-full  bg-sky-100 dark:bg-slate-900">
@@ -19,18 +18,16 @@ export function Layout({ showHeader, children }: LayoutProps) {
           showSettings={showSettings}
           onToggleSettings={() => {
             setShowSettings((show) => !show);
-            setShowAbout(false);
           }}
         />
         <div className="flex h-full w-full items-end justify-center pb-5 md:items-center">
           {children}
         </div>
       </div>
-      {(showSettings || showAbout) && (
+      {showSettings && (
         <div
           onClick={() => {
             setShowSettings(false);
-            setShowAbout(false);
           }}
           className="absolute left-0 top-0 h-full w-full"
         />
