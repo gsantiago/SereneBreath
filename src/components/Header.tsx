@@ -30,19 +30,21 @@ export const Header = ({
   return (
     <animated.header
       data-testid="header"
+      className="absolute flex h-20 w-full max-w-5xl items-center px-5"
       style={headerStyles}
-      className="relative flex w-full items-center justify-between"
     >
-      <h1 className="text-2xl font-bold dark:text-white">SereneBreath</h1>
-      <div className="z-10 flex">
-        <ButtonIcon
-          isActive={showSettings}
-          title={t("settings.title")}
-          onClick={onToggleSettings}
-        >
-          {gearIcon}
-        </ButtonIcon>
-        <Settings isVisible={showSettings} />
+      <div className="relative flex w-full items-center justify-between">
+        <h1 className="text-2xl font-bold dark:text-white">SereneBreath</h1>
+        <div className="z-10 flex">
+          <ButtonIcon
+            isActive={showSettings}
+            title={t("settings.title")}
+            onClick={onToggleSettings}
+          >
+            {gearIcon}
+          </ButtonIcon>
+          <Settings isVisible={showSettings} />
+        </div>
       </div>
     </animated.header>
   );

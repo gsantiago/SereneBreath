@@ -8,14 +8,14 @@ export default {
 
 export const withHeaderAndFooter = {
   args: {
-    showHeaderAndFooter: true,
+    showHeader: true,
     children: <p>content</p>,
   },
 };
 
 export const withoutHeaderAndFooter = {
   args: {
-    showHeaderAndFooter: false,
+    showHeader: false,
     children: <p>content</p>,
   },
 };

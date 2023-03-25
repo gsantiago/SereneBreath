@@ -14,7 +14,7 @@ import { techniques } from "@/config/techniques";
 
 function App() {
   const [isActive, setIsActive] = useState(false);
-  const [showHeaderAndFooter, setShowHeaderAndFooter] = useState(true);
+  const [showHeader, setShowHeader] = useState(true);
 
   const [technique] = useStorage("technique");
   const [time] = useStorage("time");
@@ -34,7 +34,7 @@ function App() {
     techniques.find((p) => p.name === technique) ?? techniques[0];
 
   return (
-    <Layout showHeaderAndFooter={showHeaderAndFooter}>
+    <Layout showHeader={showHeader}>
       {isActive && (
         <Countdown>
           {() => (
@@ -45,7 +45,7 @@ function App() {
               vibrateOnStepChange={vibration}
               pattern={selectedTechnique.pattern}
               onClose={() => {
-                setShowHeaderAndFooter(true);
+                setShowHeader(true);
                 setIsActive(false);
 
                 startSpring.start({
@@ -62,7 +62,7 @@ function App() {
 
       {!isActive && (
         <animated.div
-          className="relative flex w-full justify-center"
+          className="relative flex w-full justify-center pt-20"
           style={startStyle}
         >
           <Cards />
@@ -70,7 +70,7 @@ function App() {
           <div className="absolute bottom-0">
             <Start
               onClick={() => {
-                setShowHeaderAndFooter(false);
+                setShowHeader(false);
 
                 startSpring.start({
                   to: {

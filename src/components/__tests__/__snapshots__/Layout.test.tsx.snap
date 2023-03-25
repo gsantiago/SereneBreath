@@ -6,15 +6,15 @@ exports[`renders successfuly 1`] = `
     class="h-full  bg-sky-100 dark:bg-slate-900"
   >
     <div
-      class=" relative m-auto flex h-full flex-col items-center justify-between overflow-hidden "
+      class="relative m-auto flex h-full flex-col items-center justify-between overflow-hidden "
     >
-      <div
-        class="w-full max-w-5xl p-5"
+      <header
+        class="absolute flex h-20 w-full max-w-5xl items-center px-5"
+        data-testid="header"
+        style="opacity: 0; transform: none;"
       >
-        <header
+        <div
           class="relative flex w-full items-center justify-between"
-          data-testid="header"
-          style="opacity: 0; transform: none;"
         >
           <h1
             class="text-2xl font-bold dark:text-white"
@@ -299,8 +299,8 @@ exports[`renders successfuly 1`] = `
               </div>
             </div>
           </div>
-        </header>
-      </div>
+        </div>
+      </header>
       <div
         class="flex h-full w-full items-end justify-center pb-5 md:items-center"
       >

@@ -3,7 +3,7 @@ import { Layout, LayoutProps } from "@/components/Layout";
 
 const setup = (props?: Partial<LayoutProps>) =>
   render(
-    <Layout showHeaderAndFooter {...props}>
+    <Layout showHeader {...props}>
       content
     </Layout>
   );
@@ -19,7 +19,7 @@ test("accessibility", async () => {
 });
 
 test("does not show header and footer", () => {
-  setup({ showHeaderAndFooter: false });
+  setup({ showHeader: false });
 
   expect(screen.getByTestId("header")).not.toBeVisible();
 });
