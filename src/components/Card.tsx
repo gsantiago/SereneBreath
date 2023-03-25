@@ -133,7 +133,7 @@ interface ControlProps {
 
 const Control = ({ isActive, ...props }: ControlProps) => (
   <div
-    className={`absolute top-2 right-2 ${
+    className={`absolute top-2 right-2 hidden ${
       isActive ? "opacity-100" : "opacity-0"
     } transition-all`}
   >
