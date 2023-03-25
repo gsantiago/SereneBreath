@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-import { ButtonIcon } from "@/components/ButtonIcon";
 import { Field } from "@/components/Field";
 import { RadioGroup } from "@/components/RadioGroup";
 import { Stepper } from "@/components/Stepper";
@@ -53,6 +52,7 @@ export function Card({ title, description, pattern, isActive }: CardProps) {
         <div className="flex h-full w-full flex-col justify-between">
           <Control
             isActive={isActive}
+            title="Settings"
             onClick={() => setShowSettings((v) => !v)}
           >
             {adjustmentsIcon}
@@ -77,6 +77,7 @@ export function Card({ title, description, pattern, isActive }: CardProps) {
       back={
         <div className="pt-12">
           <Control
+            title="Go back"
             isActive={isActive}
             onClick={() => setShowSettings((v) => !v)}
           >
@@ -123,8 +124,11 @@ export function Card({ title, description, pattern, isActive }: CardProps) {
   );
 }
 
-interface ControlProps extends React.HTMLProps<HTMLButtonElement> {
+interface ControlProps {
   isActive: boolean;
+  title: string;
+  children: React.ReactNode;
+  onClick: () => void;
 }
 
 const Control = ({ isActive, ...props }: ControlProps) => (
@@ -133,7 +137,11 @@ const Control = ({ isActive, ...props }: ControlProps) => (
       isActive ? "opacity-100" : "opacity-0"
     } transition-all`}
   >
-    <ButtonIcon {...props} />
+    <button
+      type="button"
+      className="p-2 text-gray-700 hover:text-gray-900"
+      {...props}
+    />
   </div>
 );
 
