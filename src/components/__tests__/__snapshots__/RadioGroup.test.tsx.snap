@@ -7,14 +7,14 @@ exports[`renders successfuly 1`] = `
   >
     <input
       class="h-4 w-4 cursor-pointer border-gray-300 text-blue-600 focus:ring-blue-600"
-      id="option-Apple"
+      id="option-fruit-Apple"
       name="fruit"
       type="radio"
       value="Apple"
     />
     <label
       class="text-md block cursor-pointer pl-2 text-xs leading-6 text-gray-700 dark:text-gray-100"
-      for="option-Apple"
+      for="option-fruit-Apple"
     >
       Apple
     </label>
@@ -24,14 +24,14 @@ exports[`renders successfuly 1`] = `
   >
     <input
       class="h-4 w-4 cursor-pointer border-gray-300 text-blue-600 focus:ring-blue-600"
-      id="option-Banana"
+      id="option-fruit-Banana"
       name="fruit"
       type="radio"
       value="Banana"
     />
     <label
       class="text-md block cursor-pointer pl-2 text-xs leading-6 text-gray-700 dark:text-gray-100"
-      for="option-Banana"
+      for="option-fruit-Banana"
     >
       Banana
     </label>
@@ -41,14 +41,14 @@ exports[`renders successfuly 1`] = `
   >
     <input
       class="h-4 w-4 cursor-pointer border-gray-300 text-blue-600 focus:ring-blue-600"
-      id="option-Orange"
+      id="option-fruit-Orange"
       name="fruit"
       type="radio"
       value="Orange"
     />
     <label
       class="text-md block cursor-pointer pl-2 text-xs leading-6 text-gray-700 dark:text-gray-100"
-      for="option-Orange"
+      for="option-fruit-Orange"
     >
       Orange
     </label>

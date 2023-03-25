@@ -92,14 +92,14 @@ exports[`renders successfuly 1`] = `
               <input
                 checked=""
                 class="h-4 w-4 cursor-pointer border-gray-300 text-blue-600 focus:ring-blue-600"
-                id="option-female"
+                id="option-guide-female"
                 name="guide"
                 type="radio"
                 value="female"
               />
               <label
                 class="text-md block cursor-pointer pl-2 text-xs leading-6 text-gray-700 dark:text-gray-100"
-                for="option-female"
+                for="option-guide-female"
               >
                 Female voice
               </label>
@@ -109,14 +109,14 @@ exports[`renders successfuly 1`] = `
             >
               <input
                 class="h-4 w-4 cursor-pointer border-gray-300 text-blue-600 focus:ring-blue-600"
-                id="option-male"
+                id="option-guide-male"
                 name="guide"
                 type="radio"
                 value="male"
               />
               <label
                 class="text-md block cursor-pointer pl-2 text-xs leading-6 text-gray-700 dark:text-gray-100"
-                for="option-male"
+                for="option-guide-male"
               >
                 Male voice
               </label>
@@ -126,14 +126,14 @@ exports[`renders successfuly 1`] = `
             >
               <input
                 class="h-4 w-4 cursor-pointer border-gray-300 text-blue-600 focus:ring-blue-600"
-                id="option-bell"
+                id="option-guide-bell"
                 name="guide"
                 type="radio"
                 value="bell"
               />
               <label
                 class="text-md block cursor-pointer pl-2 text-xs leading-6 text-gray-700 dark:text-gray-100"
-                for="option-bell"
+                for="option-guide-bell"
               >
                 Bell
               </label>
