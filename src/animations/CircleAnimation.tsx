@@ -1,8 +1,13 @@
-import { animated, useSpring } from "@react-spring/web";
-import { AnimationProps } from "@/config/types";
-import { WIDTH } from "@/components/Card";
+import { animated, SpringValue, useSpring } from "@react-spring/web";
 
-const SIZE = 200;
+import {
+  AnimationContainer,
+  SIZE as ANIMATION_SIZE,
+} from "@/components/AnimationContainer";
+import { WIDTH } from "@/components/Card";
+import { AnimationCardProps, AnimationProps } from "@/config/types";
+
+const SIZE = ANIMATION_SIZE * 0.75;
 const WAVE_HEIGHT = 29;
 
 export function CircleAnimation({
@@ -36,13 +41,29 @@ export function CircleAnimation({
   });
 
   return (
-    <div className="relative flex items-center justify-center">
+    <CircleAnimationBase progress={spring.progress} waves={waves.x} scale />
+  );
+}
+
+interface CircleAnimationBaseProps {
+  progress: SpringValue<number>;
+  waves: SpringValue<number>;
+  scale: boolean;
+}
+
+function CircleAnimationBase({
+  progress,
+  waves,
+  scale,
+}: CircleAnimationBaseProps) {
+  return (
+    <AnimationContainer>
       <animated.div
         className="relative overflow-hidden rounded-full border-4 border-sky-100 shadow outline outline-4 outline-white dark:border-slate-900"
         style={{
           width: SIZE,
           height: SIZE,
-          scale: spring.progress.to([0, 1], [0.8, 1]),
+          scale: scale ? progress.to([0, 1], [0.8, 1]) : 1,
         }}
       >
         <animated.div
@@ -50,14 +71,14 @@ export function CircleAnimation({
           style={{
             width: WIDTH,
             height: "100%",
-            y: spring.progress.to([0, 1], [SIZE + WAVE_HEIGHT, 0]),
+            y: progress.to([0, 1], [SIZE + WAVE_HEIGHT, 0]),
           }}
         >
           <animated.div
             className="absolute bottom-full flex"
             style={{
               y: 5,
-              x: waves.x.to([0, 1], ["0", "-50%"]),
+              x: waves.to([0, 1], ["0", "-50%"]),
             }}
           >
             <svg
@@ -94,7 +115,7 @@ export function CircleAnimation({
             className="absolute bottom-full"
             style={{
               y: 5,
-              x: waves.x.to([1, 0], [0 - 30, -271 - 30]),
+              x: waves.to([1, 0], [0 - 30, -271 - 30]),
               opacity: 0.6,
             }}
           >
@@ -105,6 +126,29 @@ export function CircleAnimation({
           </animated.svg>
         </animated.div>
       </animated.div>
-    </div>
+    </AnimationContainer>
+  );
+}
+
+export function CircleAnimationCard({ isActive }: AnimationCardProps) {
+  const { progress } = useSpring({
+    progress: isActive ? 0.5 : 1,
+  });
+
+  const waves = useSpring({
+    from: {
+      x: 0,
+    },
+    to: {
+      x: 1,
+    },
+    config: {
+      duration: 5000,
+    },
+    loop: true,
+  });
+
+  return (
+    <CircleAnimationBase progress={progress} waves={waves.x} scale={false} />
   );
 }

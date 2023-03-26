@@ -7,21 +7,21 @@ export const techniques = [
   {
     name: "square",
     pattern: [4, 4, 4, 4],
-    animation: "square",
+    animation: "ring",
   },
   {
     name: "deepCalm",
     pattern: [4, 7, 8, 0],
-    animation: "ring",
+    animation: "circle",
   },
   {
     name: "pranayama",
     pattern: [7, 4, 8, 4],
-    animation: "circle",
+    animation: "classic",
   },
   {
     name: "ujjayi",
     pattern: [7, 0, 7, 0],
-    animation: "classic",
+    animation: "ring",
   },
 ] as const;

@@ -4,8 +4,12 @@ import { Card, WIDTH as CARD_WIDTH } from "@/components/Card";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useStorage } from "@/hooks/useStorage";
 
+import { RingAnimationCard } from "@/animations/RingAnimation";
+import { ClassicAnimationCard } from "@/animations/ClassicAnimation";
+import { CircleAnimationCard } from "@/animations/CircleAnimation";
+
 import { techniques } from "@/config/techniques";
-import { Technique } from "@/config/types";
+import { Animation, AnimationCardProps, Technique } from "@/config/types";
 
 export function Cards() {
   const { t } = useTranslation();
@@ -26,8 +30,16 @@ export function Cards() {
           description={t(`techniques.${item.name}.description`)}
           pattern={item.pattern}
           isActive={isActive}
+          animation={animations[item.animation]}
         />
       )}
     </Carousel>
   );
 }
+
+const animations: Record<Animation, React.FC<AnimationCardProps>> = {
+  circle: CircleAnimationCard,
+  classic: ClassicAnimationCard,
+  ring: RingAnimationCard,
+  square: CircleAnimationCard,
+};

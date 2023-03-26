@@ -54,14 +54,14 @@ export function SquareAnimation({
           height: BALL,
         }}
       >
-        <ClassicAnimation
+        {/* <ClassicAnimation
           currentStep={currentStep}
           pattern={pattern}
           state={state}
           size={BALL}
           containerSize={BALL}
           isHolding={isHolding}
-        />
+        /> */}
       </animated.div>
     </div>
   );

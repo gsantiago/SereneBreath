@@ -27,3 +27,9 @@ export interface AnimationProps {
   state: "idle" | "inhaling" | "exhaling";
   isHolding: boolean;
 }
+
+export interface AnimationCardProps {
+  isActive: boolean;
+}
+
+export type Animation = keyof typeof animations;

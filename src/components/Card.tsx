@@ -9,7 +9,7 @@ import { Flipper } from "@/components/Flipper";
 import { useStorage } from "@/hooks/useStorage";
 import { useTranslation } from "@/hooks/useTranslation";
 
-import { Pattern } from "@/config/types";
+import { AnimationCardProps, Pattern } from "@/config/types";
 
 import { Settings as SettingsType } from "@/config/types";
 
@@ -21,9 +21,16 @@ export interface CardProps {
   description: string;
   pattern: Pattern;
   isActive: boolean;
+  animation: React.FC<AnimationCardProps>;
 }
 
-export function Card({ title, description, pattern, isActive }: CardProps) {
+export function Card({
+  title,
+  description,
+  pattern,
+  isActive,
+  animation: Animation,
+}: CardProps) {
   const [time, setTime] = useStorage("time");
   const [guide, setGuide] = useStorage("guide");
 
@@ -59,7 +66,7 @@ export function Card({ title, description, pattern, isActive }: CardProps) {
           </Control>
           <div>
             <div className="mb-5 flex w-full items-center justify-center">
-              <img src="/logo.svg" width={100} alt="" draggable="false" />
+              <Animation isActive={isActive} />
             </div>
             <h1 className="font-bold sm:text-xl">{title}</h1>
             <p className="my-1 text-xs text-gray-400">{pattern.join("-")}</p>
