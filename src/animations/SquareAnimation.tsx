@@ -9,6 +9,7 @@ export function SquareAnimation({
   currentStep,
   pattern,
   state,
+  isHolding,
 }: AnimationProps) {
   const propsX = useSpring({
     from: {
@@ -59,6 +60,7 @@ export function SquareAnimation({
           state={state}
           size={BALL}
           containerSize={BALL}
+          isHolding={isHolding}
         />
       </animated.div>
     </div>

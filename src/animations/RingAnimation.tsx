@@ -9,7 +9,12 @@ const CENTER = {
   y: SIZE / 2,
 };
 
-export function RingAnimation({ currentStep, pattern, state }: AnimationProps) {
+export function RingAnimation({
+  currentStep,
+  pattern,
+  state,
+  isHolding,
+}: AnimationProps) {
   const spring = useSpring({
     from: {
       progress: 0,
@@ -27,7 +32,7 @@ export function RingAnimation({ currentStep, pattern, state }: AnimationProps) {
       progress: 0,
     },
     to: {
-      progress: currentStep === 1 || currentStep === 3 ? 1 : 0,
+      progress: isHolding ? 1 : 0,
     },
     loop: true,
     config: {
