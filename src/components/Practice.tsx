@@ -97,7 +97,7 @@ export function Practice({
         <p>{t("complete")}</p>
       </animated.div>
       <animated.div
-        className="flex h-full w-full flex-col items-center justify-between pt-10 pb-10 md:pt-28 md:pb-28 lg:pt-40 lg:pb-40"
+        className="flex h-full w-full flex-col items-center justify-between py-10 md:py-28"
         style={containerStyle}
       >
         <animated.div style={contentStyle}>
