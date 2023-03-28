@@ -7,6 +7,7 @@ import { useStorage } from "@/hooks/useStorage";
 import { RingAnimationCard } from "@/animations/RingAnimation";
 import { ClassicAnimationCard } from "@/animations/ClassicAnimation";
 import { CircleAnimationCard } from "@/animations/CircleAnimation";
+import { SquareAnimationCard } from "@/animations/SquareAnimation";
 
 import { techniques } from "@/config/techniques";
 import { Animation, AnimationCardProps, Technique } from "@/config/types";
@@ -41,5 +42,5 @@ const animations: Record<Animation, React.FC<AnimationCardProps>> = {
   circle: CircleAnimationCard,
   classic: ClassicAnimationCard,
   ring: RingAnimationCard,
-  square: CircleAnimationCard,
+  square: SquareAnimationCard,
 };

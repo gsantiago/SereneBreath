@@ -7,7 +7,7 @@ export const techniques = [
   {
     name: "square",
     pattern: [4, 4, 4, 4],
-    animation: "ring",
+    animation: "square",
   },
   {
     name: "deepCalm",

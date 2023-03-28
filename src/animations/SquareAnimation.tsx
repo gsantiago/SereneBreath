@@ -1,17 +1,13 @@
-import { animated, useSpring } from "@react-spring/web";
-import { AnimationProps } from "@/config/types";
-import { ClassicAnimation } from "./ClassicAnimation";
-
-const SIZE = 200;
-const BALL = 20;
+import { animated, SpringValue, useSpring } from "@react-spring/web";
+import { AnimationCardProps, AnimationProps } from "@/config/types";
+import { AnimationContainer, SIZE } from "@/components/AnimationContainer";
 
 export function SquareAnimation({
   currentStep,
   pattern,
   state,
-  isHolding,
 }: AnimationProps) {
-  const propsX = useSpring({
+  const spring = useSpring({
     from: {
       progress: 0,
     },
@@ -23,46 +19,37 @@ export function SquareAnimation({
     },
   });
 
-  const propsY = useSpring({
-    from: {
-      progress: 0,
-    },
-    to: {
-      progress:
-        state === "idle" ? 0 : currentStep === 1 || currentStep === 2 ? 1 : 0,
-    },
-    config: {
-      duration: pattern[currentStep] * 1000,
-    },
-  });
+  return <SquareAnimationBase progress={spring.progress} />;
+}
 
-  const offset = BALL / 2 + 1;
+interface SquareAnimationBaseProps {
+  progress: SpringValue<number>;
+}
 
-  const x = propsX.progress.to([0, 1], [-offset, SIZE - offset]);
-  const y = propsY.progress.to([0, 1], [-offset, SIZE - offset]);
-
+function SquareAnimationBase({ progress }: SquareAnimationBaseProps) {
   return (
-    <div
-      className="relative border border-sky-400"
-      style={{ width: SIZE, height: SIZE }}
-    >
+    <AnimationContainer>
       <animated.div
+        className="relative top-0 left-0 h-full w-full overflow-hidden rounded-md border-4 border-sky-200"
         style={{
-          x,
-          y,
-          width: BALL,
-          height: BALL,
+          scale: progress.to([0, 1], [0.8, 1]),
+          width: SIZE * 0.75,
+          height: SIZE * 0.75,
         }}
       >
-        {/* <ClassicAnimation
-          currentStep={currentStep}
-          pattern={pattern}
-          state={state}
-          size={BALL}
-          containerSize={BALL}
-          isHolding={isHolding}
-        /> */}
+        <animated.div
+          className="absolute left-0 bottom-0 h-full w-full bg-gradient-to-b from-sky-400 to-sky-500"
+          style={{ y: progress.to([1, 0], ["0%", "100%"]) }}
+        />
       </animated.div>
-    </div>
+    </AnimationContainer>
   );
+}
+
+export function SquareAnimationCard({ isActive }: AnimationCardProps) {
+  const { progress } = useSpring({
+    progress: isActive ? 1 : 0.5,
+  });
+
+  return <SquareAnimationBase progress={progress} />;
 }

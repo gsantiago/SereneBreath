@@ -15,7 +15,7 @@ export function AnimationContainer({
 
   return (
     <animated.div
-      className="flex items-center justify-center "
+      className="relative flex items-center justify-center"
       style={{ width: SIZE, height: SIZE, scale: scale ?? defaultScale }}
     >
       {children}
