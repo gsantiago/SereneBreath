@@ -1,4 +1,9 @@
-import { animated, SpringValue, useSpring } from "@react-spring/web";
+import {
+  animated,
+  SpringValue,
+  useSpring,
+  useSpringValue,
+} from "@react-spring/web";
 import { AnimationCardProps, AnimationProps } from "@/config/types";
 import { AnimationContainer, SIZE } from "@/components/AnimationContainer";
 
@@ -6,8 +11,9 @@ export function SquareAnimation({
   currentStep,
   pattern,
   state,
+  isHolding,
 }: AnimationProps) {
-  const spring = useSpring({
+  const { progress } = useSpring({
     from: {
       progress: 0,
     },
@@ -19,20 +25,49 @@ export function SquareAnimation({
     },
   });
 
-  return <SquareAnimationBase progress={spring.progress} />;
+  const { ring } = useSpring({
+    from: {
+      ring: 0,
+    },
+    to: {
+      ring: isHolding ? 1 : 0,
+    },
+    loop: true,
+    config: {
+      duration: 1000,
+    },
+  });
+
+  const defaultValue = useSpringValue(1);
+
+  return (
+    <SquareAnimationBase
+      progress={progress}
+      ring={isHolding ? ring : defaultValue}
+    />
+  );
 }
 
 interface SquareAnimationBaseProps {
   progress: SpringValue<number>;
+  ring: SpringValue<number>;
 }
 
-function SquareAnimationBase({ progress }: SquareAnimationBaseProps) {
+function SquareAnimationBase({ progress, ring }: SquareAnimationBaseProps) {
   return (
     <AnimationContainer>
       <animated.div
-        className="relative top-0 left-0 h-full w-full overflow-hidden rounded-md border-4 border-sky-200"
+        className="absolute h-full w-full rounded-md bg-sky-300"
         style={{
-          scale: progress.to([0, 1], [0.8, 1]),
+          scale: ring.to([0, 1], [1, 1.2]),
+          opacity: ring.to([0, 1], [1, 0]),
+          width: SIZE * 0.75,
+          height: SIZE * 0.75,
+        }}
+      />
+      <animated.div
+        className="relative top-0 left-0 h-full w-full overflow-hidden rounded-md border-4 border-sky-200 bg-white"
+        style={{
           width: SIZE * 0.75,
           height: SIZE * 0.75,
         }}
@@ -51,5 +86,25 @@ export function SquareAnimationCard({ isActive }: AnimationCardProps) {
     progress: isActive ? 1 : 0.5,
   });
 
-  return <SquareAnimationBase progress={progress} />;
+  const { ring } = useSpring({
+    from: {
+      ring: 0,
+    },
+    to: {
+      ring: isActive ? 1 : 0,
+    },
+    loop: true,
+    config: {
+      duration: 1000,
+    },
+  });
+
+  const defaultValue = useSpringValue(1);
+
+  return (
+    <SquareAnimationBase
+      progress={progress}
+      ring={isActive ? ring : defaultValue}
+    />
+  );
 }
