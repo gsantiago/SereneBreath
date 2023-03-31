@@ -46,7 +46,7 @@ export function Card({
 
   return (
     <Flipper
-      className={`relative flex h-full w-full flex-col justify-between rounded-lg bg-white p-5 transition-all duration-500 ${
+      className={`relative flex h-full w-full flex-col justify-between rounded-lg bg-white p-5 transition-all duration-500 dark:bg-slate-800 dark:text-white dark:shadow-none ${
         isActive && "shadow dark:shadow-gray-500"
       }`}
       style={{
@@ -69,8 +69,12 @@ export function Card({
               <Animation isActive={isActive} />
             </div>
             <h1 className="font-bold sm:text-xl">{title}</h1>
-            <p className="my-1 text-xs text-gray-400">{pattern.join("-")}</p>
-            <p className="text-sm text-gray-800 sm:text-base">{description}</p>
+            <p className="my-1 text-xs text-gray-400 dark:text-gray-500">
+              {pattern.join("-")}
+            </p>
+            <p className="text-sm text-gray-800 dark:text-white sm:text-base">
+              {description}
+            </p>
           </div>
           <div
             className={`mt-5 ${
