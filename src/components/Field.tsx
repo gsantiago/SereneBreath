@@ -1,5 +1,3 @@
-import React from "react";
-
 export interface FieldProps {
   id: string;
   label: string;
@@ -33,7 +31,7 @@ export function Field({
         </div>
         <div className="col-span-2 text-right">{children}</div>
       </div>
-      {bottom && <div className="mt-2">{bottom}</div>}
+      {bottom && <div className="mt-1">{bottom}</div>}
     </div>
   );
 }

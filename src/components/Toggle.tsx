@@ -14,7 +14,7 @@ export function Toggle<T extends string = string>(props: ToggleProps<T>) {
       {props.options.map((option) => (
         <label
           key={option.value}
-          className={`cursor-pointer border  py-2 px-3 text-xs first:rounded-tl-md first:rounded-bl-md first:border-r-0 last:rounded-tr-md last:rounded-br-md last:border-l-0 hover:border-blue-600 hover:bg-blue-600 hover:text-white ${
+          className={`cursor-pointer border  py-1 px-2 text-xs first:rounded-tl-md first:rounded-bl-md first:border-r-0 last:rounded-tr-md last:rounded-br-md last:border-l-0 hover:border-blue-600 hover:bg-blue-600 hover:text-white ${
             props.value === option.value
               ? "border-blue-600 bg-blue-600 text-white"
               : "border-gray-300 bg-gray-50"
