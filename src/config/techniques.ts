@@ -17,11 +17,11 @@ export const techniques = [
   {
     name: "pranayama",
     pattern: [7, 4, 8, 4],
-    animation: "classic",
+    animation: "ring",
   },
   {
     name: "ujjayi",
     pattern: [7, 0, 7, 0],
-    animation: "ring",
+    animation: "classic",
   },
 ] as const;
