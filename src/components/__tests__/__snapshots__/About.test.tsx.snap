@@ -6,7 +6,7 @@ exports[`renders successfuly 1`] = `
     class="mt-3 px-5 text-right text-gray-600"
   >
     <button
-      title="About"
+      title="about.title"
       type="button"
     >
       <svg

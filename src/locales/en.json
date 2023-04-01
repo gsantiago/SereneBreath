@@ -8,6 +8,7 @@
     "exhale": "Exhale"
   },
   "about": {
+    "title": "About",
     "text1": "SereneBreath.com is a small webapp to help you improve your breathing, relaxing and managing your stress.",
     "text2": "This project is open source and open for new contributions. Check out its repo for more info:",
     "text3": "English and bell audio files are from the great Breathly app, which also inspired this app."
@@ -38,7 +39,8 @@
       "system": "System",
       "light": "Light",
       "dark": "Dark"
-    }
+    },
+    "language": "Language"
   },
   "audio": {
     "female": {
@@ -56,10 +58,6 @@
       "hold": "bell_2.mp3",
       "exhale": "bell_1.mp3"
     }
-  },
-  "footer": {
-    "language": "Language",
-    "about": "About"
   },
   "stepper": {
     "increase": "Increase",

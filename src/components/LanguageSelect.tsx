@@ -18,7 +18,7 @@ export function LanguageSelect() {
   return (
     <Field
       id="locale"
-      label={t("footer.language")}
+      label={t("settings.language")}
       bottom={
         <Select<LocaleKey>
           id="locale"

@@ -13,7 +13,7 @@ export function About() {
       <div className="mt-3 px-5 text-right text-gray-600">
         <button
           type="button"
-          title={t("footer.about")}
+          title={t("about.title")}
           onClick={() => setShowInfo((show) => !show)}
         >
           {infoIcon}

@@ -8,6 +8,7 @@
     "exhale": "Solte"
   },
   "about": {
+    "title": "Sobre",
     "text1": "SereneBreath.com é um pequeno webapp para ajudar a melhorar sua respiração, relaxar e administrar seu estresse.",
     "text2": "Este projeto é código aberto e está disponível para novas contribuições. Confira seu repositório para mais informações:",
     "text3": "Sons de sino e guia em inglês são do app Breathly, que também inspirou este app."
@@ -38,7 +39,8 @@
       "system": "Sistema",
       "light": "Claro",
       "dark": "Escuro"
-    }
+    },
+    "language": "Idioma"
   },
   "audio": {
     "female": {
@@ -46,10 +48,6 @@
       "hold": "pt/female_hold.mp3",
       "exhale": "pt/female_exhale.mp3"
     }
-  },
-  "footer": {
-    "language": "Idioma",
-    "about": "Sobre"
   },
   "stepper": {
     "increase": "Aumentar",
