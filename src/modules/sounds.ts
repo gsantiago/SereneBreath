@@ -1,13 +1,12 @@
 import { Settings } from "@/config/types";
 import { translate, TranslationKey } from "@/modules/i18n";
-import { getItem, subscribe } from "@/modules/storage";
 
 const loadedTracks: Record<string, HTMLAudioElement> = {};
 
 let lastPlayedStep = -1;
 let lastPlayedTrack: HTMLAudioElement;
 
-function loadTrack(file: string) {
+export function loadTrack(file: string) {
   const url = `/audio/${file}`;
 
   if (!loadedTracks[file]) {
@@ -60,9 +59,3 @@ export function playStepGuide(guide: Settings["guide"], step: number) {
 export function playBell() {
   playTrack("bell.mp3");
 }
-
-loadTrack("bell.mp3");
-
-loadGuideTracks(getItem("guide"));
-
-subscribe("guide", loadGuideTracks);

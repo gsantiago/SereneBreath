@@ -10,6 +10,8 @@ import { Cards } from "@/components/Cards";
 import { useStorage } from "@/hooks/useStorage";
 import { useThemeSupport } from "@/hooks/useThemeSupport";
 
+import { loadGuideTracks, loadTrack } from "@/modules/sounds";
+
 import { techniques } from "@/config/techniques";
 
 function App() {
@@ -71,6 +73,9 @@ function App() {
             <Start
               onClick={() => {
                 setShowHeader(false);
+
+                loadTrack("bell.mp3");
+                loadGuideTracks(guide);
 
                 startSpring.start({
                   to: {
