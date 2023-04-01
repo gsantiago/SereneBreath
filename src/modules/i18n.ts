@@ -1,7 +1,7 @@
 import objectPath from "object-path";
 
 import { translations } from "@/config/translations";
-import { getItem } from "@/modules/storage";
+import { getItem, subscribe } from "@/modules/storage";
 
 type NestedKeyOf<ObjectType extends object> = {
   [Key in keyof ObjectType & (string | number)]: ObjectType[Key] extends object
@@ -21,3 +21,12 @@ export function translate(key: TranslationKey): string {
 
   return objectPath.get(translations["en"], key, key);
 }
+
+function updatePageLanguage(locale: string) {
+  const html = document.documentElement;
+  html.setAttribute("lang", locale);
+}
+
+updatePageLanguage(getItem("locale"));
+
+subscribe("locale", updatePageLanguage);
