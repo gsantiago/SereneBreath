@@ -115,7 +115,12 @@ export function Practice({
         <Progress
           seconds={data.seconds}
           duration={seconds * 1000}
-          onClose={() =>
+          onClose={() => {
+            completeSpring.start({
+              opacity: 0,
+              scale: 0,
+            });
+
             containerSpring.start({
               from: {
                 opacity: 1,
@@ -126,8 +131,8 @@ export function Practice({
                 scale: 1,
               },
               onResolve: () => onClose(),
-            })
-          }
+            });
+          }}
         />
       </animated.div>
     </div>
