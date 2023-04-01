@@ -10,7 +10,11 @@
 
 [SereneBreath.com](https://serenebreath.com) is a small webapp to help you improve your breathing, relaxing and managing your stress.
 
+<div align="scenter">
+
 ![SereneBreath on macbook, ipad and iphone](/etc/mockups.png)
+
+</div>
 
 ## Stack
 
