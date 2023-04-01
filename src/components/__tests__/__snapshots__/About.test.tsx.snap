@@ -3,49 +3,27 @@
 exports[`renders successfuly 1`] = `
 <div>
   <div
-    class="px-5 py-1 dark:text-white"
+    class="mt-3 px-5 text-right text-gray-600"
   >
-    <p
-      class="mt-2 text-xs"
+    <button
+      title="About"
+      type="button"
     >
-      SereneBreath.com is a small webapp to help you improve your breathing, relaxing and managing your stress.
-    </p>
-    <p
-      class="mt-2 text-xs"
-    >
-      This project is open source and open for new contributions. Check out its repo for more info:
-       
-      <a
-        class="text-blue-600 underline dark:text-sky-300"
-        href="https://github.com/gsantiago/SereneBreath"
-        target="_blank"
+      <svg
+        class="h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        Github Repo.
-      </a>
-    </p>
-    <p
-      class="mt-2 text-xs"
-    >
-      English and bell audio files are from the great Breathly app, which also inspired this app.
-       
-      <a
-        class="text-blue-600 underline dark:text-sky-300"
-        href="https://breathly.app/"
-        target="_blank"
-      >
-        Breathly Site.
-      </a>
-    </p>
-    <div
-      class="mt-5 text-center"
-    >
-      <small
-        class="text-xs text-gray-400"
-      >
-        v
-        0.0.1
-      </small>
-    </div>
+        <path
+          d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
   </div>
 </div>
 `;

@@ -6,7 +6,7 @@ exports[`renders successfuly 1`] = `
     class="flex"
   >
     <label
-      class="cursor-pointer border  py-2 px-3 text-xs first:rounded-tl-md first:rounded-bl-md first:border-r-0 last:rounded-tr-md last:rounded-br-md last:border-l-0 hover:border-blue-600 hover:bg-blue-600 hover:text-white border-gray-300 bg-gray-50"
+      class="cursor-pointer border  py-1 px-2 text-xs first:rounded-tl-md first:rounded-bl-md first:border-r-0 last:rounded-tr-md last:rounded-br-md last:border-l-0 hover:border-blue-600 hover:bg-blue-600 hover:text-white border-gray-300 bg-gray-50"
     >
       <input
         class="sr-only"
@@ -17,7 +17,7 @@ exports[`renders successfuly 1`] = `
       Apple
     </label>
     <label
-      class="cursor-pointer border  py-2 px-3 text-xs first:rounded-tl-md first:rounded-bl-md first:border-r-0 last:rounded-tr-md last:rounded-br-md last:border-l-0 hover:border-blue-600 hover:bg-blue-600 hover:text-white border-gray-300 bg-gray-50"
+      class="cursor-pointer border  py-1 px-2 text-xs first:rounded-tl-md first:rounded-bl-md first:border-r-0 last:rounded-tr-md last:rounded-br-md last:border-l-0 hover:border-blue-600 hover:bg-blue-600 hover:text-white border-gray-300 bg-gray-50"
     >
       <input
         class="sr-only"
@@ -28,7 +28,7 @@ exports[`renders successfuly 1`] = `
       Banana
     </label>
     <label
-      class="cursor-pointer border  py-2 px-3 text-xs first:rounded-tl-md first:rounded-bl-md first:border-r-0 last:rounded-tr-md last:rounded-br-md last:border-l-0 hover:border-blue-600 hover:bg-blue-600 hover:text-white border-gray-300 bg-gray-50"
+      class="cursor-pointer border  py-1 px-2 text-xs first:rounded-tl-md first:rounded-bl-md first:border-r-0 last:rounded-tr-md last:rounded-br-md last:border-l-0 hover:border-blue-600 hover:bg-blue-600 hover:text-white border-gray-300 bg-gray-50"
     >
       <input
         class="sr-only"
