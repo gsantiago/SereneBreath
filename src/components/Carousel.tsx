@@ -80,6 +80,8 @@ export function Carousel<Item>({
     }
   );
 
+  const extraMargin = items.length % 2 === 0 ? itemWidth / 2 : 0;
+
   return (
     <div className="relative select-none" style={{ width: "100%" }}>
       <animated.div
@@ -87,6 +89,8 @@ export function Carousel<Item>({
         className="relative flex w-full cursor-grab touch-none justify-center pb-12 active:cursor-grabbing"
         style={{
           x: trackStyles.x,
+          marginLeft: extraMargin,
+          marginRight: extraMargin,
         }}
       >
         {items.map((item, index) => {
