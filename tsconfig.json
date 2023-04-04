@@ -19,7 +19,7 @@
     "paths": {
       "@/*": ["./*"]
     },
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals", "dom-screen-wake-lock"]
   },
   "include": ["src"]
 }

@@ -3,6 +3,7 @@ import { Pattern, Settings } from "@/config/types";
 
 import * as sounds from "@/modules/sounds";
 import { createVibrator } from "@/modules/vibrator";
+import { lock, release } from "@/modules/screen";
 
 type Events = {
   update: { seconds: number; step: number };
@@ -77,8 +78,12 @@ export function createExercise({
     start: () => {
       intervalId = setInterval(tick, 1000);
       emitter.emit("step", step);
+      lock();
     },
     on: emitter.on,
-    destroy: () => clearInterval(intervalId),
+    destroy: () => {
+      clearInterval(intervalId);
+      release();
+    },
   };
 }
