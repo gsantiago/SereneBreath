@@ -22,6 +22,6 @@ export const techniques = [
   {
     name: "ujjayi",
     pattern: [7, 0, 7, 0],
-    animation: "classic",
+    animation: "lotus",
   },
 ] as const;

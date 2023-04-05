@@ -4,9 +4,10 @@ import { Card, WIDTH as CARD_WIDTH } from "@/components/Card";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useStorage } from "@/hooks/useStorage";
 
-import { RingAnimationCard } from "@/animations/RingAnimation";
-import { ClassicAnimationCard } from "@/animations/ClassicAnimation";
 import { CircleAnimationCard } from "@/animations/CircleAnimation";
+import { ClassicAnimationCard } from "@/animations/ClassicAnimation";
+import { LotusAnimationCard } from "@/animations/LotusAnimation";
+import { RingAnimationCard } from "@/animations/RingAnimation";
 import { SquareAnimationCard } from "@/animations/SquareAnimation";
 
 import { techniques } from "@/config/techniques";
@@ -41,6 +42,7 @@ export function Cards() {
 const animations: Record<Animation, React.FC<AnimationCardProps>> = {
   circle: CircleAnimationCard,
   classic: ClassicAnimationCard,
+  lotus: LotusAnimationCard,
   ring: RingAnimationCard,
   square: SquareAnimationCard,
 };
