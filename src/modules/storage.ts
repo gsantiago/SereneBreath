@@ -1,6 +1,7 @@
 import mitt from "mitt";
 import { Settings } from "@/config/types";
 import { translations, LocaleKey } from "@/config/translations";
+import { techniques } from "@/config/techniques";
 
 const STORAGE_VERSION = "1";
 
@@ -17,6 +18,7 @@ const defaultValues: Settings = {
   guide: "female",
   theme: "system",
   locale: defaultLocale,
+  customPattern: techniques[5].pattern,
 };
 
 export type Key = keyof Settings;

@@ -83,6 +83,14 @@
     "ujjayi": {
       "title": "Ujjayi",
       "description": "Balance influence on the cardiorespiratory system, release fellings of irritation, and calm the mind and body."
+    },
+    "custom": {
+      "title": "Custom Exercise",
+      "description": "Didn't find any technique suited for you? Adjust this card to your own pattern."
     }
+  },
+  "card": {
+    "back": "Go back",
+    "sec": "sec"
   }
 }

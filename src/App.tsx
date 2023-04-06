@@ -22,6 +22,7 @@ function App() {
   const [time] = useStorage("time");
   const [guide] = useStorage("guide");
   const [vibration] = useStorage("vibration");
+  const [customPattern] = useStorage("customPattern");
 
   const [startStyle, startSpring] = useSpring(() => ({
     from: {
@@ -35,6 +36,9 @@ function App() {
   const selectedTechnique =
     techniques.find((p) => p.name === technique) ?? techniques[0];
 
+  const pattern =
+    technique === "custom" ? customPattern : selectedTechnique.pattern;
+
   return (
     <Layout showHeader={showHeader}>
       {isActive && (
@@ -45,7 +49,7 @@ function App() {
               guide={guide}
               seconds={time * 60}
               vibrateOnStepChange={vibration}
-              pattern={selectedTechnique.pattern}
+              pattern={pattern}
               onClose={() => {
                 setShowHeader(true);
                 setIsActive(false);

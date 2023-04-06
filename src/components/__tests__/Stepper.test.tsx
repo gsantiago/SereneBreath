@@ -6,7 +6,7 @@ const handlers = {
 };
 
 const setup = (props?: Partial<StepperProps>) =>
-  render(<Stepper {...handlers} value={1} {...props} />);
+  render(<Stepper {...handlers} unit="min" value={1} {...props} />);
 
 test("acessibility", async () => {
   const { container } = setup();

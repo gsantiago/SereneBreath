@@ -1,17 +1,13 @@
 import { useEffect, useState } from "react";
 
-import { Field } from "@/components/Field";
-import { RadioGroup } from "@/components/RadioGroup";
 import { Stepper } from "@/components/Stepper";
-import { Switch } from "@/components/Switch";
 import { Flipper } from "@/components/Flipper";
+import { CustomExerciseSettings } from "@/components/CustomExerciseSettings";
 
 import { useStorage } from "@/hooks/useStorage";
 import { useTranslation } from "@/hooks/useTranslation";
 
 import { AnimationCardProps, Pattern } from "@/config/types";
-
-import { Settings as SettingsType } from "@/config/types";
 
 export const WIDTH = 250;
 const HEIGHT = "100%";
@@ -22,6 +18,7 @@ export interface CardProps {
   pattern: Pattern;
   isActive: boolean;
   animation: React.FC<AnimationCardProps>;
+  adjustable: boolean;
 }
 
 export function Card({
@@ -30,13 +27,12 @@ export function Card({
   pattern,
   isActive,
   animation: Animation,
+  adjustable,
 }: CardProps) {
   const [time, setTime] = useStorage("time");
-  const [guide, setGuide] = useStorage("guide");
+  const [showSettings, setShowSettings] = useState(false);
 
   const { t } = useTranslation();
-
-  const [showSettings, setShowSettings] = useState(false);
 
   useEffect(() => {
     if (showSettings && !isActive) {
@@ -46,7 +42,7 @@ export function Card({
 
   return (
     <Flipper
-      className={`relative flex h-full w-full flex-col justify-between rounded-lg bg-white p-5 transition-all duration-500 dark:bg-slate-800 dark:text-white dark:shadow-none ${
+      className={`relative flex h-full w-full flex-col justify-between rounded-lg bg-white transition-all duration-500 dark:bg-slate-800 dark:text-white dark:shadow-none ${
         isActive && "shadow dark:shadow-gray-500"
       }`}
       style={{
@@ -56,14 +52,16 @@ export function Card({
       }}
       flipped={showSettings}
       front={
-        <div className="flex h-full w-full flex-col justify-between">
-          <Control
-            isActive={isActive}
-            title="Settings"
-            onClick={() => setShowSettings((v) => !v)}
-          >
-            {adjustmentsIcon}
-          </Control>
+        <div className="flex h-full w-full flex-col justify-between p-5 pb-0">
+          {adjustable && (
+            <Control
+              isActive={isActive}
+              title={t("settings.title")}
+              onClick={() => setShowSettings((v) => !v)}
+            >
+              {adjustmentsIcon}
+            </Control>
+          )}
           <div>
             <div className="mb-5 flex w-full items-center justify-center">
               <Animation isActive={isActive} />
@@ -81,54 +79,20 @@ export function Card({
               isActive ? "px-8 opacity-100" : "px-4 opacity-0"
             } transition-all duration-500`}
           >
-            <Stepper min={1} value={time} onChange={setTime} />
+            <Stepper min={1} value={time} onChange={setTime} unit="min" />
           </div>
         </div>
       }
       back={
-        <div className="pt-12">
+        <div className="relative flex h-full w-full items-center justify-center px-4">
           <Control
-            title="Go back"
+            title={t("card.back")}
             isActive={isActive}
             onClick={() => setShowSettings((v) => !v)}
           >
             {backIcon}
           </Control>
-          <Field
-            id={`guide_${title}`}
-            label={t("settings.guide.title")}
-            description={
-              guide === "disabled"
-                ? t("settings.guide.disabled")
-                : t("settings.guide.enabled")
-            }
-            children={
-              <Switch
-                id={`guide_${title}`}
-                value={guide !== "disabled"}
-                onChange={(selected) =>
-                  setGuide(selected ? "female" : "disabled")
-                }
-              />
-            }
-            bottom={
-              guide !== "disabled" && (
-                <RadioGroup<SettingsType["guide"]>
-                  name={`guide_${title}`}
-                  value={guide}
-                  onChange={setGuide}
-                  options={[
-                    {
-                      label: t("settings.guide.options.female"),
-                      value: "female",
-                    },
-                    { label: t("settings.guide.options.male"), value: "male" },
-                    { label: t("settings.guide.options.bell"), value: "bell" },
-                  ]}
-                />
-              )
-            }
-          />
+          <CustomExerciseSettings />
         </div>
       }
     />
@@ -144,13 +108,13 @@ interface ControlProps {
 
 const Control = ({ isActive, ...props }: ControlProps) => (
   <div
-    className={`absolute top-2 right-2 hidden ${
+    className={`absolute top-2 right-2 z-10 ${
       isActive ? "opacity-100" : "opacity-0"
     } transition-all`}
   >
     <button
       type="button"
-      className="p-2 text-gray-700 hover:text-gray-900"
+      className="p-2 text-gray-700 hover:text-gray-900 dark:text-white"
       {...props}
     />
   </div>

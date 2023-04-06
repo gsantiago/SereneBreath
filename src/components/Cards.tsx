@@ -17,6 +17,8 @@ export function Cards() {
   const { t } = useTranslation();
 
   const [technique, setTechnique] = useStorage("technique");
+  const [customPattern] = useStorage("customPattern");
+
   const activeIndex = techniques.findIndex((t) => t.name === technique);
 
   return (
@@ -26,15 +28,20 @@ export function Cards() {
       items={[...techniques]}
       onChange={(item) => setTechnique(item.name)}
     >
-      {({ item, isActive }) => (
-        <Card
-          title={t(`techniques.${item.name}.title`)}
-          description={t(`techniques.${item.name}.description`)}
-          pattern={item.pattern}
-          isActive={isActive}
-          animation={animations[item.animation]}
-        />
-      )}
+      {({ item, isActive }) => {
+        const isCustom = item.name === "custom";
+
+        return (
+          <Card
+            title={t(`techniques.${item.name}.title`)}
+            description={t(`techniques.${item.name}.description`)}
+            pattern={isCustom ? customPattern : item.pattern}
+            isActive={isActive}
+            animation={animations[item.animation]}
+            adjustable={isCustom}
+          />
+        );
+      }}
     </Carousel>
   );
 }

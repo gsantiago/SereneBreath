@@ -19,6 +19,8 @@ export function Flipper({
         className={`relative h-full w-full transition-all duration-500 ${className}`}
         style={{
           transformStyle: "preserve-3d",
+          WebkitTransformStyle: "preserve-3d",
+          perspective: 1000,
           transform: flipped ? "rotateY(180deg)" : "rotateY(0)",
           ...style,
         }}
@@ -28,6 +30,7 @@ export function Flipper({
           style={{
             backfaceVisibility: "hidden",
             WebkitBackfaceVisibility: "hidden",
+            transform: "rotateX(0deg)",
           }}
         >
           {front}
@@ -37,7 +40,7 @@ export function Flipper({
           style={{
             backfaceVisibility: "hidden",
             WebkitBackfaceVisibility: "hidden",
-            transform: "rotateY(180deg)",
+            transform: "rotateY(-180deg)",
           }}
         >
           {back}

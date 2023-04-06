@@ -1,7 +1,6 @@
 import { TextAnimated } from "@/components/TextAnimated";
 import { useTranslation } from "@/hooks/useTranslation";
-
-const STEPS = ["inhale", "hold", "exhale", "hold"] as const;
+import { STEPS } from "@/config/constants";
 
 export function StepIndicator(props: { step: number }) {
   const { t } = useTranslation();

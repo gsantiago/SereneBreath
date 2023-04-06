@@ -9,6 +9,7 @@ export type Settings = {
   guide: "female" | "male" | "bell" | "disabled";
   theme: "system" | "light" | "dark";
   locale: LocaleKey;
+  customPattern: Pattern;
 };
 
 // inhale, hold, exhale, hold

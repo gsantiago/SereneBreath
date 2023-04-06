@@ -6,6 +6,7 @@ export interface StepperProps {
   onChange: (newValue: number) => void;
   min?: number;
   max?: number;
+  unit: string;
 }
 
 export function Stepper({
@@ -13,6 +14,7 @@ export function Stepper({
   onChange,
   min = -Infinity,
   max = Infinity,
+  unit,
 }: StepperProps) {
   const { t } = useTranslation();
 
@@ -20,6 +22,7 @@ export function Stepper({
     <div className="flex items-center justify-between">
       <Control
         title={t("stepper.decrease")}
+        disabled={value === min}
         onClick={() => {
           if (value > min) {
             onChange(value - 1);
@@ -28,7 +31,9 @@ export function Stepper({
       >
         {minusIcon}
       </Control>
-      <p className="text-center">{value} min</p>
+      <p className="text-center">
+        {value} {unit}
+      </p>
       <Control
         title={t("stepper.increase")}
         onClick={() => {
@@ -46,7 +51,7 @@ export function Stepper({
 const Control = (props: React.ComponentProps<"button">) => (
   <button
     type="button"
-    className="flex h-8 w-8 items-center justify-center rounded-full  bg-blue-600 text-white hover:bg-blue-700"
+    className="flex h-8 w-8 items-center justify-center rounded-full  bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-30"
     {...props}
   />
 );

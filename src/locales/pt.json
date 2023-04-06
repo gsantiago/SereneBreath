@@ -73,6 +73,14 @@
     "ujjayi": {
       "title": "Ujjayi",
       "description": "Equilibra a influência no sistema cardiorrespiratório, libera sentimentos de irritação e acalma a mente e o corpo."
+    },
+    "custom": {
+      "title": "Customizado",
+      "description": "Não se interessou por nenhuma das técnicas? Configure esse card para seu próprio padrão de respiração!"
     }
+  },
+  "card": {
+    "back": "Voltar",
+    "sec": "seg"
   }
 }

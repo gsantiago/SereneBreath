@@ -24,4 +24,9 @@ export const techniques = [
     pattern: [7, 0, 7, 0],
     animation: "lotus",
   },
+  {
+    name: "custom",
+    pattern: [3, 3, 3, 3],
+    animation: "classic",
+  },
 ] as const;
