@@ -86,6 +86,7 @@ function LotusAnimationBase({ progress }: LotusAnimationBaseProps) {
             transformOrigin: "bottom",
             rotate: progress.to([0, 1], ["0deg", "40deg"]),
             x: progress.to([0, 1], [0, -5]),
+            y: -1,
           }}
         />
         <animated.path
@@ -96,6 +97,7 @@ function LotusAnimationBase({ progress }: LotusAnimationBaseProps) {
           style={{
             transformOrigin: "bottom",
             rotate: progress.to([0, 1], ["0deg", "-40deg"]),
+            y: -1,
           }}
         />
       </svg>

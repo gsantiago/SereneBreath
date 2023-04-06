@@ -67,7 +67,7 @@ function CircleAnimationBase({
         }}
       >
         <animated.div
-          className="relative isolate overflow-hidden rounded-full border-4 border-sky-100 dark:border-slate-900"
+          className="relative isolate overflow-hidden rounded-full border-4 border-sky-100 dark:border-transparent"
           style={{
             width: SIZE,
             height: SIZE,
